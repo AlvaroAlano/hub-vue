@@ -1,0 +1,365 @@
+{
+  "templates": {
+    "texts": [
+      [
+        {
+          "name": "Abertura",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nRegistrado no ticket XXXXX e encaminhado à equipe de análise e desenvolvimento.\n\nRetornaremos o mais breve possível.\n\n",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]] - Ticket ",
+          "attachments": ""
+        },
+        {
+          "name": "Conclusão",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nTicket XXXXX concluído.\n\n* Favor verificar se ficou de acordo.",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "",
+          "attachments": ""
+        },
+        {
+          "name": "Andamento",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nConforme solicitado, verificamos que o Ticket XXXXXX se encontra em desenvolvimento.\n\n* Assim que houver atualizações, retornaremos.",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "",
+          "attachments": ""
+        }
+      ],
+      [
+        {
+          "name": "Cadastro",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nConfigurado o grupo de credenciadas 100 - XXXXXXXXXXXX para gerar o arquivo de conciliação e enviar para a conciliadora XXXXXXXXXXXX com o identificador: XXXXXXXXXXXX.\nO arquivo eletrônico para conciliação financeira, serão gerados após 05:00hhmm aproximadamente do período (data) encerrada, a contar com D(corrente data)-3.\n* Ex.: o arquivo eletrônico com eventos (vendas / pagamentos) do dia 01/01/2026 serão enviados as 05:00hhmm aproximadamente do dia 04/01/2026.\n\nHavendo divergência de valores na conciliação, favor nos informar a data para que possamos analisar e se necessário executar o reprocessamento do(s) arquivo(s).\n\nObs.: iremos ativar o serviço para envio do extrato eletrônico para conciliação financeira após recebermos o consentimento do estabelecimento (o mesmo deve ser incluso cópia neste e-mail para responder aos envolvidos).",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]] - Tráfego de arquivos - Conciliação financeira",
+          "attachments": ""
+        },
+        {
+          "name": "Reprocessamento",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nAgendado reprocessamento do(s) arquivo(s) correspondente(s) ao(s) evento(s) do período 10/09/2024, inerentes ao grupo de credenciadas XX - XXXXXXXXX.\n\n* Será(ão) enviado(s) o(s) arquivo(s) as 13:00 (hhmm) aproximadamente do dia 27/02/2025.\n\n* Favor verificar se ficou de acordo.",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]] - Reprocessamento arquivos de conciliação financeira",
+          "attachments": ""
+        },
+        {
+          "name": "Falta de pagamento",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n \nA partir do momento em que a subadquirente realiza a baixa em nosso sistema, este automaticamente reprocessa o arquivo e o encaminha para a conciliadora, sem necessidade de qualquer ação manual.\n \nRessaltamos que a Convcard não realiza nenhuma ação direta referente aos pagamentos. Nosso sistema apenas identifica a baixa feita pela subadquirente, reprocessa e envia os dados de forma automática para a conciliadora.\n \n# Neste caso, orientamos que entrem em contato com a administradora para questionar sobre os pagamentos.\n \nPor questão de competência, cordialmente esclareço que é necessário efetuar contato com a administradora do cartão:\n* Cartão Útil Card através do e-mail utilcard@facisc.org.br ou pelo fone (48) 3952-8821.\n* Cartão Convnet através do e-mail convenio@masterfarma.com.br ou pelo fone (48) 3437-7363.\n* Cartão São Rafael através do e-mail convenio@farmaciassaorafael.com.br ou pelo fone (49) 3331-1120.",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]] ",
+          "attachments": ""
+        },
+        {
+          "name": "Pagamento sem identificação",
+          "text": "[[SCRIPT=saudacao]], XXXXXXX.\n \nGostaria de informar que nós, da Convcard, não somos responsáveis pelos pagamentos. Nosso sistema apenas recebe a baixa registrada pela administradora responsável pelo pagamento e, a partir disso, reprocessa o arquivo e o envia automaticamente para a conciliadora.\n \nO print encaminhado contém lançamentos que não conseguimos identificar a origem, pois não temos responsabilidade sobre esses registros.\n \nReforçamos ainda que não realizamos nenhum procedimento manual para o envio dos arquivos, sendo todo o processo automático e dependente das informações repassadas pela administradora.\n \nPor questão de competência, cordialmente esclareço que é necessário efetuar contato com a administradora do cartão:\n* Cartão Útil Card através do e-mail utilcard@facisc.org.br ou pelo fone (48) 3952-8821.\n* Cartão Convnet através do e-mail convenio@masterfarma.com.br ou pelo fone (48) 3437-7363.\n* Cartão São Rafael através do e-mail convenio@farmaciassaorafael.com.br ou pelo fone (49) 3331-1120.",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]] ",
+          "attachments": ""
+        },
+        {
+          "name": "Arquivo de pagamento - existem alguns pagamentos",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nA partir do momento em que a Associação realiza a baixa em nosso sistema, ele automaticamente reprocessa o arquivo e o envia para a conciliadora, sem necessidade de qualquer ação manual.\n\nFizemos uma análise nas NSUs que você nos enviou e geramos o relatório em anexo. Nele é possível verificar quais transações já foram pagas e quais ainda permanecem em aberto na coluna Data Pagamento.\n\nRessaltamos que a Convcard não realiza nenhuma ação direta referente aos pagamentos. Nosso sistema apenas identifica a baixa feita pela Administradora (Associação), reprocessa e envia os dados de forma automática para a conciliadora. \n\nPor questão de competência, cordialmente esclareço que é necessário efetuar contato com a administradora do cartão:\n* Cartão Útil Card através do e-mail utilcard@facisc.org.br ou pelo fone (48) 3952-8821.\n* Cartão Convnet através do e-mail convenio@masterfarma.com.br ou pelo fone (48) 3437-7363.\n* Cartão São Rafael através do e-mail convenio@farmaciassaorafael.com.br ou pelo fone (49) 3331-1120.",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "",
+          "attachments": ""
+        }
+      ],
+      [
+        {
+          "name": "FLG_PARCELAMENTO",
+          "text": "[[SCRIPT=saudacao]],\n\nConforme solicitado, Habilitado parâmetro FLG_PARCELAMENTO = SIM para a rede XXX.\n\nFico a disposição.",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]] - FLG_PARCELAMENTO",
+          "attachments": ""
+        },
+        {
+          "name": "FLG_EXIBENUMCARTAO",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nConforme solicitado abaixo, habilitado o parâmetro FLG_EXIBENUMCARTAO (EXIBE CARTÃO MÓD. CONVENIADA) para a(s) conveniada(s) citada(s) abaixo e para o grupo de conveniadas {XXX}.\n\n* Favor verificar se ficou de acordo. ",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]] - FLG_EXIBENUMCARTAO (EXIBE CARTÃO MÓD. CONVENIADA)",
+          "attachments": ""
+        },
+        {
+          "name": "FLG_LIBERATELAIMPOR",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nHabilitado parâmetro FLG_LIBERATELAIMPOR (LIB.TELAS IMP. PARA MODULO CONVENIADA) para a empresa abaixo citada.\n\nEstamos a disposição.",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]] - FLG_LIBERATELAIMPOR(LIBERA TELA DE IMPORTACAO CONVENIADA)",
+          "attachments": ""
+        },
+        {
+          "name": "FLG_NAOEXIBCREDEXP",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nConforme solicitado neste dia 24/01/2024, habilitado o parâmetro FLG_NAOEXIBCREDEXP (NÃO EXIBE CRÉDITO EXPIRADO (CAD_748)) para a(s) conveniada(s) (XXX), para inibir o lançamento de créditos expirados através da tela crt/grupoadmin/cad_748 (Vendas Créditos Expirados).\n\nEstamos a disposição.",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]] - FLG_NAOEXIBCREDEXP",
+          "attachments": ""
+        },
+        {
+          "name": "FLG_CNPJDUPLO ",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nHabilitado o parâmetro FLG_CNPJDUPLO (PERMITE DUPLICAR O CNPJ/CPF CAD_863) para a administradora XXX - XXXXXXXXXXX.\n\n* Favor verificar se ficou de acordo.",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]] - FLG_CNPJDUPLO ",
+          "attachments": ""
+        },
+        {
+          "name": "FLG_USUARIO_QR_CODE ",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nConforme solicitado, configuramos o parâmetro FLG_USUARIO_QR_CODE (HABILITA MODULO USUARIO VENDA QRCODE) = N para a conveniada XXXX.\n\n* Favor verificar se ficou de acordo. ",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]] - FLG_USUARIO_QR_CODE (HABILITA MODULO USUARIO VENDA QRCODE) = N",
+          "attachments": ""
+        },
+        {
+          "name": "FLG_USUARIO_CARTAO_VITUAL ",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nConforme solicitado, configuramos o parâmetro FLG_USUARIO_CARTAO_VITUAL (HABILITA MODULO USUARIO GERENCIAR CARTÃO VIRTUAL) = N para a conveniada XXXX.\n\n* Favor verificar se ficou de acordo.  ",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]] - FLG_USUARIO_CARTAO_VITUAL (HABILITA MODULO USUARIO GERENCIAR CARTÃO VIRTUAL) = N",
+          "attachments": ""
+        },
+        {
+          "name": "FLG_VALIDA_CLICKSIGN_PENDENTE_CONVENIADA",
+          "text": "[[SCRIPT=saudacao]], xxxxxxx.\n \nConforme solicitado abaixo, desabilitado o parâmetro FLG_VALIDA_CLICKSIGN_PENDENTE_CONVENIADA (HABILITA ALERTA/BLOQUEIO PARA CONTRATOS CREDENCIADA CLICKSIGN PENDENTES=N das redes (1 e 238) e que bloqueia o acesso a N dias sem assinatura do contrato.\n \n* Favor verificar se ficou de acordo.",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]] - FLG_VALIDA_CLICKSIGN_PENDENTE_CONVENIADA (HABILITA ALERTA/BLOQUEIO PARA CONTRATOS CREDENCIADA CLICKSIGN PENDENTES)",
+          "attachments": ""
+        },
+        {
+          "name": "FLG_BLOQ_USU_ALT_SENHA_CRT",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nConforme solicitado, configuramos o parâmetro FLG_BLOQ_USU_ALT_SENHA_CRT (BLOQUEIA USUARIO ALTERAR SENHA CARTAO) = S para a conveniada XXXX.\n\n* Favor verificar se ficou de acordo. ",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]] - FLG_BLOQ_USU_ALT_SENHA_CRT (BLOQUEIA USUARIO ALTERAR SENHA CARTAO) = S",
+          "attachments": ""
+        }
+      ],
+      [
+        {
+          "name": "Taxa Credenciada",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n \nConforme solicitado abaixo, alteramos a taxa administrativa da(s) credenciada(s) citada(s) para 2,50%, para atender ao acordo comercial.\n\n* Favor verificar se ficou de acordo. ",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]] - Alteração Taxas Credenciada",
+          "attachments": ""
+        },
+        {
+          "name": "Taxa por Conveniada",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n \nConforme solicitado abaixo, alteramos a taxa administrativa da(s) credenciada(s) {XXXX,XXXX}, inerentes a rede 25 - CARTAO CONVNET DE CONVENIOS, para 1,50% para autorização de transações ao(s) colaboradores da(s) conveniada(s) {XXXX,XXXX}, para atender ao acordo comercial.\n\n * Favor verificar se ficou de acordo.",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]] - Taxa por Conveniada",
+          "attachments": ""
+        },
+        {
+          "name": "Taxa por Ramo de Atividade",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nConforme solicitado alteramos a taxa do ramo de atividades 27 - PADARIA E CONFEITARIA.\n * Há uma uma perda de 0,50% aproximadamente em relação a taxa mínima aplicada de 3,50% para o ramo de atividade.\n * Favor verificar se ficou de acordo.",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]] - Taxa por Ramo de Atividade",
+          "attachments": ""
+        },
+        {
+          "name": "Taxa MCFARMA",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nAlteramos a taxa administrativa da(s) credenciada(s) do Grupo 195 - MCFARMA  inerentes a rede 25 - CARTAO CONVNET DE CONVENIOS, para 3% para autorização de transações ao(s) colaboradores da(s) conveniada(s) citada(s) , para atender ao acordo comercial.\n\n * Favor verificar se ficou de acordo.",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]] ",
+          "attachments": ""
+        },
+        {
+          "name": "Taxa APIUNA  ",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nAlteramos a taxa administrativa da(s) credenciada(s) do Grupo 623 - MF FARMACIA APIUNA  inerentes a rede 25 - CARTAO CONVNET DE CONVENIOS, para 2,5% para autorização de transações ao(s) colaboradores da(s) conveniada(s) citada(s), para atender ao acordo comercial.\n\n * Favor verificar se ficou de acordo.",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]] ",
+          "attachments": ""
+        }
+      ],
+      [
+        {
+          "name": "Habilita Elo ",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nConforme solicitado, configurado as conveniada {XXXX} para gerar apenas cartões ELO.\n\n* Favor verificar se ficou de acordo. ",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]] - Habilitar cartões ELO",
+          "attachments": ""
+        },
+        {
+          "name": "Habilita Multibenefícios",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nConforme solicitado, configurado as conveniada {XXXX} para gerar apenas cartões MULTIBENEFICIOS.\n\n* Favor verificar se ficou de acordo. ",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]] - Habilitar cartões MULTIBENEFICIOS",
+          "attachments": ""
+        }
+      ],
+      [
+        {
+          "name": "Link de Acesso",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nSegue link para criar o acesso ao grupo de Credenciadas XXX - XXXXXXXXXXXXX.\n\nhttps://convc.link/mZT1N\n* Sugerimos que o link seja aberto em uma janela anônima do navegador.\n\nSegue anexo a relação de credenciadas com CNPJ raiz 10.928.428.",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]]",
+          "attachments": ""
+        },
+        {
+          "name": "Reenvio de Link",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nSegue link conforme solicitado: https://convc.link/Gtx7f\n\nEstamos a disposição.",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "",
+          "attachments": ""
+        }
+      ],
+      [
+        {
+          "name": "Manutenção NSU Pendentes",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nConforme solicitado abaixo, adicionamos a(s) devida(s) NSU(s) XXXXXX correspondente(s) ao(s) devido(s) evento(s), na rotina para que quando o usuário contiver saldo, seja aprovada a(s) devida(s) transação(ões).\n\nEstamos a disposição.",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]] - Manutenção de NSUs Pendentes",
+          "attachments": ""
+        },
+        {
+          "name": "Dados para configuração do ConvCard no módulo FEPAS CardSE",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nSegue os dados para configuração do ConvCard no módulo FEPAS CardSE (Fiserv).\n\nAos clientes que utilizam a tecnologia de TEF/SITEF da FISERV/Software Express, devem realizar uma atualização obrigatória no módulo para os cartões Convcard (Util, Convnet entre outros).\n\nÉ necessário utilizar módulo FEPAS CardSE, (padrão atual da FISERV/Software Express).\n\n🗂️ Cartilha sugestiva, com o passo a passo de como o atendente de caixa deve realizar vendas utilizando o QR Code no ponto de venda.\n\n📎 No anexo, enviamos um material fornecido pela própria Software Express com as instruções necessárias.\n\n🔗 Também está disponível o link com orientações e documentação completas sobre a atualização: https://site.convcard.com.br/crt/atualizaca\n\n🔧 Atenção: por questão de competência, o suporte técnico para a atualização deve ser solicitado diretamente ao fabricante do seu sistema de PDV, ao suporte autorizado da sua automação comercial ou à própria FISERV/Software Express. A Convcard não realiza suporte técnico sobre o ambiente TEF.\n\n🚀 Benefícios do módulo FEPAS CardSE (Fiserv): além de garantir maior segurança nas transações, o módulo oferece suporte a dois recursos importantes:\n# Aceitação de pagamento com cartão virtual\n# Geração de QR Code para pagamento direto no ponto de venda - através da carteira digital\n\n📌 Importante:\n Em alguns casos, a empresa de automação comercial poderá precisar registrar o código da carteira utilizada para que consigam gerar o QR Code dos cartões com tecnologia da Convcard. Nos materiais anexos e no link acima, vocês encontrarão os códigos das carteiras digitais atualmente vinculadas ao sistema da Convcard, prontos para uso, sendo: ConvCard 01390056 / UtilCard 01390057 / Convnet 01390059\n\nEssas funcionalidades já estão disponíveis no app dos usuários e, poderão ser utilizadas em seu estabelecimento também.\n\nEstamos a disposição.",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "Dados para configuração do ConvCard no módulo FEPAS CardSE",
+          "attachments": "C:\\Users\\alvaro.alano\\Downloads\\CardSE_ConvCard_Guia de instalação.pdf;C:\\Users\\alvaro.alano\\Downloads\\Cartilha_Estabelecimento_Comercial_QR_Code_Cartões_Convcard_2025.png;C:\\Users\\alvaro.alano\\Downloads\\Geral_atualizacao_modulo_fepas.psd.png;C:\\Users\\alvaro.alano\\Downloads\\Informamos a liberação da versão produtiva no Portal da Fiserv (codigos).pdf"
+        },
+        {
+          "name": "Aprovação de Contestação",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nConforme solicitado, aprovada a contestação de valor R$ XXXXXX do colaborador XXXXXXXX.\n\n* Favor verificar se ficou de acordo.   ",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]] - Aprovação de contestação",
+          "attachments": ""
+        },
+        {
+          "name": "Por questão de compet..",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nPor questão de competência, cordialmente esclareço que é necessário efetuar contato com a administradora do cartão:\n* Cartão Útil Card através do e-mail utilcard@facisc.org.br ou pelo fone (48) 3952-8821.\n* Cartão Convnet através do e-mail atendimento@convnet.com.br ou pelo fone (48) 3437-7363.",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "[[SUBJECT]]",
+          "attachments": ""
+        },
+        {
+          "name": "Imagem app",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nConforme solicitado, realizado o cadastro de imagem do cartão app da conveniada XXXX - XXXXXXXXXXXXXXXXXXXXXX.\n\n* Favor verificar se ficou de acordo.",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "",
+          "attachments": ""
+        },
+        {
+          "name": "Token Integreção ConvCard",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nConforme solicitado, segue o token de produção para a(s) loja(s):\nPJ (Pessoa Jurídica)\nCredenciada: XXXXXX\nCNPJ: XXXXX\nToken: XXXXXXXXXXXXX",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "",
+          "attachments": ""
+        },
+        {
+          "name": "Cadastro imagem do cartão",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nConforme solicitado, realizado o cadastro de imagem do cartão app da conveniada XXXX - XXXXXXXXXXXXXXXXXXX.\n\n* Favor verificar se ficou de acordo.",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "",
+          "attachments": ""
+        },
+        {
+          "name": "Cópias de Credenciadas em massa",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nConforme solicitado, realizamos a cópia em massa das credenciadas da rede XX - XXXXXXXX para a rede XX - XXXXXX.\n\n* Favor verificar se ficou de acordo.",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "- Cópia de Credenciadas em Massa",
+          "attachments": ""
+        },
+        {
+          "name": "Integradores homologados com a ConvCard",
+          "text": "[[SCRIPT=saudacao]], [[TO=firstname]].\n\nPara solicitação de autorização, a ConvCard disponibiliza:\n\n1. SITEF(Software Express), SCOPE(ITAUTEC), V$Pague(VBI), CTF FAST(Auttar) e D-TEF(Linx): comumente usados em estabelecimentos com maior número de PDVs e redes de lojas para solicitação de transações que usam links dedicados.\n\n2. API REST(TEF via Internet): tecnologia da ConvCard. Indicado para estabelecimentos que procuram integração direta e ou que ainda não possuem integradores idem item 2 abaixo.\n\n# segue o link https://homologacao.convcard.com.br/documentacao-autorizador-pj para acesso ao documento para integração das transações do cartão ConvCard Pessoa Jurídica com o sistema PDV, via API REST.\n\nNão havendo integração, é necessário que a software house em questão solicite a chave de liberação do processo de homologação através do e-mail suporte@convcard.com.br, informando os seguintes dados:\n* Nome do integrador:\n* CNPJ do integrador:\n* Endereço completo:\n* Nome do software:\n* Nome do responsável:\n* Telefone para contato softhouse:\n* E-mail softhouse:\n* Telefone para contato suporte:\n* E-mail suporte:\n\n3. A título de contingência, disponibilizamos os aplicativos:\n3.1 POSVirtual(Cartão Convênio [Client]), para solicitar autorização sem vínculo com sistemas de PDVs.\n3.2 ConvCard Pay, para solicitar autorização sem vínculo com sistemas de PDVs através do link https://www.convcard.com.br/pay\n\n4. ConvCard Pay: aplicativo para solicitar transações ConvCard via SO Android, gerar comprovante da transação e encaminhar por e-mail. Tem por objeto:\n* contingenciar solicitação de autorização até que seja concluído o processo de integração com integradores idem item 1 e 2 acima.\n* solicitar transações em caso de eventuais dificuldades que impossibilite efetuar transações via sistema(s) PDV.\n* atendimentos mais específico, podendo se dirigir in loco para comodidade do cliente.\n\n* Qual o integrador do estabelecimento?",
+          "shortcut": "",
+          "type": "text/plain",
+          "keyword": "",
+          "subject": "- Integradores homologados com a ConvCard",
+          "attachments": ""
+        }
+      ]
+    ],
+    "groups": [
+      {
+        "name": "Tickets",
+        "protected": false
+      },
+      {
+        "name": "Conciliação ",
+        "protected": false
+      },
+      {
+        "name": "Parametros",
+        "protected": false
+      },
+      {
+        "name": "Taxas",
+        "protected": false
+      },
+      {
+        "name": "No Name",
+        "protected": false
+      },
+      {
+        "name": "Grupo Credenciada",
+        "protected": false
+      },
+      {
+        "name": "Outros",
+        "protected": false
+      }
+    ]
+  }
+}

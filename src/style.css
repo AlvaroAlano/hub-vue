@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ── Convcard Brand · CSS Variables ─────────────────────────────── */
+  :root {
+    /* Light Mode (Zinc) */
+    --background:          0    0%  100%;   /* zinc-0 / White */
+    --foreground:        240   10%   3.9%;  /* zinc-950 */
+
+    --card:                0    0%  100%;
+    --card-foreground:   240   10%   3.9%;
+
+    --popover:             0    0%  100%;
+    --popover-foreground: 240   10%   3.9%;
+
+    --primary:           240  5.9%   10%;   /* zinc-900 */
+    --primary-foreground:  0    0%   98%;   /* zinc-50 */
+
+    --secondary:         240  4.8% 95.9%;   /* zinc-100 */
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted:             240  4.8% 95.9%;   /* zinc-100 */
+    --muted-foreground:  240  3.8% 46.1%;   /* zinc-500 */
+
+    --accent:            240  4.8% 95.9%;   /* zinc-100 */
+    --accent-foreground: 240  5.9%   10%;
+
+    --destructive:         0 84.2% 60.2%;
+    --destructive-foreground: 0 0%   98%;
+
+    --border:            240  5.9%   90%;   /* zinc-200 */
+    --input:             240  5.9%   90%;
+    --ring:              240  5.9%   10%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark Mode (Zinc) */
+    --background:        240   10%   3.9%;  /* zinc-950 */
+    --foreground:          0    0%   98%;  /* zinc-50 */
+
+    --card:              240   10%  5.9%;  /* zinc-900 */
+    --card-foreground:     0    0%   98%;
+
+    --popover:           240   10%  5.9%;
+    --popover-foreground:   0    0%   98%;
+
+    --primary:             0    0%   98%;  /* zinc-50 */
+    --primary-foreground:240  5.9%   10%;  /* zinc-900 */
+
+    --secondary:         240  3.7% 15.9%;  /* zinc-800 */
+    --secondary-foreground: 0   0%   98%;
+
+    --muted:             240  3.7% 15.9%;  /* zinc-800 */
+    --muted-foreground:  240    5% 64.9%;  /* zinc-400 */
+
+    --accent:            240  3.7% 15.9%;  /* zinc-800 */
+    --accent-foreground:   0    0%   98%;
+
+    --destructive:         0 62.8% 30.6%;
+    --destructive-foreground: 0 0%   98%;
+
+    --border:            240  3.7% 15.9%;  /* zinc-800 */
+    --input:             240  3.7% 15.9%;
+    --ring:              240  4.9% 83.9%;  /* zinc-300 */
+  }
+
+  /* ── Reset base ──────────────────────────────────────────────────── */
+  /* @apply não funciona com CSS variables — usar propriedades diretas */
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* ── Scrollbar ───────────────────────────────────────────────────── */
+  ::-webkit-scrollbar        { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track  { background: transparent; }
+  ::-webkit-scrollbar-thumb  {
+    background: hsl(var(--border));
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground)); }
+}
+
+/* ── Card hover (usado pela busca global) ────────────────────────────── */
+.searchable-item {
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.searchable-item:hover {
+  z-index: 10;
+}
+
+html:not(.dark) .searchable-item:hover {
+  box-shadow: 0 15px 30px -10px rgba(0, 42, 83, 0.12);
+  border-color: hsl(var(--border));
+}
+
+.dark .searchable-item:hover {
+  background-color: hsl(var(--card)) !important;
+  border-color: hsl(var(--border)) !important;
+  box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Tooltip global (substituído pelo <Tooltip> na Fase 2) ───────────── */
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: hsl(var(--popover));
+  color: hsl(var(--popover-foreground));
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  white-space: normal;
+  min-width: 200px;
+  max-width: 250px;
+  z-index: 50;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+  margin-bottom: 8px;
+  border: 1px solid hsl(var(--border));
+}
+
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: hsl(var(--popover)) transparent transparent transparent;
+}
+
+.group:hover .tooltip-text,
+.group:focus-within .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    position: static;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 8px;
+    margin-bottom: 0;
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .tooltip-text::after {
+    display: none;
+  }
+}
+
+/* ── Hash navigation offset (compensa o header sticky) ──────────────── */
+section {
+  scroll-margin-top: 110px;
+}

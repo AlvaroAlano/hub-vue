@@ -1,0 +1,1959 @@
+[
+  {
+    "nome": "FLG_OBRIGA_TROCA_SENHA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "OBRIGA ALTERAÇÃO DE SENHA NO PRIMEIRO ACESSO DO USUÁRIO APÓS O CADASTRO E/OU ALTERAÇÃO DE SENHA A PARTIR DE OUTRO USUÁRIO (ex: cad_872)",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "CREDENCIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV.",
+      "GRUPO CRED",
+      "INST. FINAN.",
+      "PORTAL RH"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_SENHA_TEMPORARIA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA RECURSO DE SENHA TEMPORÁRIA",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "CREDENCIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV.",
+      "GRUPO CRED",
+      "INST. FINAN.",
+      "PORTAL RH"
+    ],
+    "auxiliares": "INTEIRO: PERÍODO DE VALIDADE DA SENHA EM DIAS; FLG_SIM_NAO: OBRIGA A TROCA DE SENHA APÓS A VALIDADE"
+  },
+  {
+    "nome": "FLG_NOTIFICA_BOLADIANTADO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA NOTIFICACAO BOLETO ADIANTADO EM ABERTO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV.",
+      "PORTAL RH"
+    ],
+    "auxiliares": "STRING_NOT_EMPTY: ASSUNTO DO EMAIL; HTML: CORPO DO EMAIL (HTML)"
+  },
+  {
+    "nome": "FLG_LIBCANCELBOLCONV",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "CONV. PERMIT. SOLICITA CANC. BOLETO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV.",
+      "PORTAL RH"
+    ],
+    "auxiliares": "FLG_SIM_NAO: PERMITE CONVENIADA EXCLUIR BOLETO REGISTRADO DIRETAMENTE"
+  },
+  {
+    "nome": "HABILITA_COBRANCA_JUROS_MULTA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA COBRANÇA DE MULTA/JUROS",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV.",
+      "PORTAL RH"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "IGNORA_COBRANCA_PAT_VE_VF_BOLETO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "NÃO INCLUIR NO BOLETO PAT A COBRANÇA PELA 2ª VIA DE CARTÃO (EMPRESA/FUNCIONÁRIO)",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV.",
+      "PORTAL RH"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_LIBCONVPGBOL",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "LIBERA CONVENIADA APÓS PAGAMENTO BOLETO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV.",
+      "PORTAL RH"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_LIBERATELAIMPOR",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "LIBERA TELA DE IMPORTACAO CONVENIADA",
+    "niveis": [
+      "CONVENIADA",
+      "GRUPO CONV.",
+      "PORTAL RH"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "ALTERAR_SITUACAO_PARA_CANCELADO_REDE_CONVENIO_CAD_540",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "PERMITE ALTERAR SITUACAO PARA CANCELADO EM REDE CONVENIO, NA TELA DE ALTERACAO SITUAÇÃO CARTÃO (GERAL) CAD_540",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV.",
+      "PORTAL RH"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_REATIVA_CADASTRO_CANCELADO_NOVO_CADASTRO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "REATIVA CADASTRO CANCELADO AO RECEBER NOVO CADASTRO DO MESMO CPF",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV.",
+      "PORTAL RH"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "INATIVA_SECAO_APLICATIVO_USUARIO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "INATIVA AS SEÇÕES SELECIONADAS",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV.",
+      "PORTAL RH"
+    ],
+    "auxiliares": "SECAO_APLICATIVO: SEÇÕES QUE SERÃO INATIVADAS"
+  },
+  {
+    "nome": "HABILITA_CARTAO_INFORMADO_VIA_IMPORTACAO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA A POSSIBILIDADE DE CADASTRAR UM USUÁRIO COM CARTÃO INFORMADO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV.",
+      "PORTAL RH"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "REMOVE_ACESSO_CARTAO_APP",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "REMOVE O ACESSO DO CARTÃO NO APLICATIVO CASO ESTEJA HABILITADO O PARÂMETRO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV.",
+      "PORTAL RH"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "HABILITA_COMPROVANTE_MOVIMENTO_APP",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA O ENVIO DE COMPROVANTES POR MOVIMENTO NO APP DO USUARIO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV.",
+      "PORTAL RH"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "DESABILITAR_CNPJ_POR_QR_CODE",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "DESABILITA A LEITURA DE CNPJ POR QR CODE",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "CREDENCIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV.",
+      "GRUPO CRED",
+      "PORTAL RH"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_MASCARAR_DADOS",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "MASCARAR DADOS SENSÍVEIS NAS TELAS",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "CREDENCIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV.",
+      "GRUPO CRED",
+      "INST. FINAN."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_HABILITA_TOUR_AUTO_ACESSO_RAPIDO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA TUTORIAL AUTOMATICO ACESSO RÁPIDO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "CREDENCIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV.",
+      "GRUPO CRED",
+      "INST. FINAN."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "TIPO_BAIXA_PARCEIRO_REPASSE",
+    "tipo": "TIPO_BAIXA_PARCEIRO_REPASSE",
+    "descricao": "TIPO BAIXA PARCEIRO REPASSE",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CREDENCIADA",
+      "GRUPO ADMIN",
+      "GRUPO CRED"
+    ],
+    "auxiliares": "TIPO_LOJA: TIPO LOJA; INTEIRO: RESPONSÁVEL PAGAMENTO"
+  },
+  {
+    "nome": "FLG_OCULTAR_RELATORIO_CONV_PAY",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "OCULTA O RELATÓRIO DE VENDAS CONVCARD PAY",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CREDENCIADA",
+      "GRUPO ADMIN",
+      "GRUPO CRED"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "DESABILITA_ACEITE_NOVAS_REGRAS_PAT",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "DESABILITA O ACEITE DO TERMO DAS NOVAS REGRAS DO PAT",
+    "niveis": [
+      "GRUPO CRED"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "ATIVAREMESSAMANUAL",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "ATIVA REMESSA MANUAL DE CRÉDITO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "COD_GRUPOADICIONAL",
+    "tipo": "COD_GRUPOADMIN_SPLIT_VIRGULA",
+    "descricao": "COD. GRUPO ADICIONAL PARA CONSULTAS (GRUPOADMIN/CAD_747)",
+    "niveis": [
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_ANTIGAREMESSA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA ANTIGA REMESSA",
+    "niveis": [
+      "ADMINISTRADORA",
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_BLOQREIMPRESSAO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "BLOQUEAR REIMPRESSAO BOLETO JA BAIXADO",
+    "niveis": [
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_CFGLIMITADM",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "PERMITE ALT. QTD. DIAS VALIDADE VIA MÓDULO ADMINISTRADORA",
+    "niveis": [
+      "ADMINISTRADORA",
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_DESABILITA_TX_RESERVA_TX_IMPOSTO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "DESABILITA TX. RESERVA E TX. IMPOSTO DO CAD_011",
+    "niveis": [
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_ESTORNOVLRABERTO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA ESTORNO EM ABERTO TELA CAD_890",
+    "niveis": [
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_INFBANCOUTROGRUPOREMCRDSICREDI",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "ASSUME INFORMAÇÕES BANCÁRIAS DE OUTRO GRUPO NA REMESSA DE CRÉDITO SICREDI E NOVAS REMESSAS.",
+    "niveis": [
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": "COD_GRUPOADMIN: CÓDIGO DO GRUPO DE ADMINISTRADORAS"
+  },
+  {
+    "nome": "FLG_INFOADICREMCRDP",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "MOSTRA INFORM. ADIC. REM. CRED. PARC.",
+    "niveis": [
+      "ADMINISTRADORA",
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_SENHADELBOLETO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "SENHA SUPERVISOR AO CANCELAR BOLETO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "LIBERARCAMPOMULTIPLOSCREDITOS",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "LIBERAR CAMPO DE MANUTENÇÃO DE MULTIPLOS CRÉDITOS",
+    "niveis": [
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "TEX_EMAIL_ESTORNO_CRED",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA PARAMETRO",
+    "niveis": [
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": "STRING_NOT_EMPTY: VAZIO; STRING_NOT_EMPTY: VAZIO; STRING_NOT_EMPTY: TEXTO QUE SERÁ ENVIADO PARA AS CREDENCIADAS AO ESTORNAR CONTAS PAGAS"
+  },
+  {
+    "nome": "FLG_EXIBENUMCARTAO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "EXIBE CARTÃO MÓD. CONVENIADA / GRUPO DE CONVENIADAS",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_TERMONOVOGRUPO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA O GERADOR DE TERMO POR GRUPO",
+    "niveis": [
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_CONTCREDGARANTID",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "CONTROLA CRED. GARANTIDO CAD_568/CAD_001",
+    "niveis": [
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_VALIDA_ALT_CAD_904",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "EXIBE MODAL VALIDANDO ALTERAÇÃO DE FUNCIONÁRIO NA CAD_904",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_PUSH_CREDITOS_MELHOR_DIA_COMPRA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA NOTIFICACAO PUSH DE CRÉDITOS/MELHOR DIA DE COMPRA",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": "HORA: HORÁRIO ATIVO INICIAL; HORA: HORÁRIO ATIVO FINAL"
+  },
+  {
+    "nome": "TIPO_PROTOCOLO_ENTREGA_CARTAO",
+    "tipo": "TIPO_PROTOCOLO_ENTREGA_CARTAO",
+    "descricao": "TIPO DE PROTOCOLO PARA ENTREGA DE CARTÕES",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": "INTEIRO: QUANTIDADE DE DIAS"
+  },
+  {
+    "nome": "FLG_USUARIO_NOVA_VIA_CRT",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA MODULO USUARIO SOLICITAR NOVA VIA CARTAO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_USUARIO_PERDA_ROUBO_CRT",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA MODULO USUARIO INFORMAR PERDA/ROUBO CARTAO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_USUARIO_CARTAO_VIRTUAL",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA MODULO USUARIO GERENCIAR CARTÃO VIRTUAL",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_USUARIO_QR_CODE",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA MODULO USUARIO VENDA QRCODE",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_OCULTA_CREDENCIADAS",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "OCULTA CREDENCIADAS",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_BLOQ_USU_ALT_SENHA_CRT",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "BLOQUEIA USUARIO ALTERAR SENHA CARTAO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_BLOQ_USU_ALT_BLOQU_CRT",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "BLOQUEIA USUARIO ALTERAR BLOQUEIO/DESBLOQUEIO CARTAO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_USUARIO_LIMITE_RAMO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA MODULO USUARIO VISUALIZAR LIMITES POR RAMO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "VLR_MAXIMO_QRCODE_SEM_SENHA",
+    "tipo": "DECIMAL",
+    "descricao": "VALOR MAXIMO PARA PAGAMENTO QRCODE SEM DIGITAR SENHA",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_VALIDA_CLICKSIGN_PENDENTE_CREDENCIADA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA ALERTA/BLOQUEIO PARA CONTRATOS CREDENCIADA CLICKSIGN PENDENTES",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CREDENCIADA",
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": "HTML: MENSAGEM CONTRATO PENDENTE; HTML: MENSAGEM CONTRATO NÃO ASSINADO"
+  },
+  {
+    "nome": "FLG_VALIDA_CLICKSIGN_PENDENTE_CONVENIADA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA ALERTA/BLOQUEIO PARA CONTRATOS CONVENIADA CLICKSIGN PENDENTES",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": "HTML: MENSAGEM CONTRATO PENDENTE; HTML: MENSAGEM CONTRATO NÃO ASSINADO"
+  },
+  {
+    "nome": "FLG_UTILIZAR_SOMENTE_VALOR_CHEIO_CADLANEV",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "DESABILITA O USO PARCIAL DE EVENTO NOS BOLETOS",
+    "niveis": [
+      "ADMINISTRADORA",
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_OBRIGA_MATRICULA_INTEGRACAO_FOLHA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "OBRIGA CADASTRAR MATRÍCULA COLABORADOR, PARA GERAR ARQUIVO INTEGRAÇÃO FOLHA",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "VLR_MAXIMO_LIMITE_API_REST",
+    "tipo": "DECIMAL",
+    "descricao": "VALOR MAXIMO PARA ALTERAÇÃO DE LIMITE POR API REST",
+    "niveis": [
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "NOM_BOTAO_PRODUTO_SERVICO",
+    "tipo": "STRING_NOT_EMPTY",
+    "descricao": "NOME DO BOTÃO PRODUTOS/SERVIÇOS",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "NOM_BOTAO_UTIL_MAIS",
+    "tipo": "STRING_NOT_EMPTY",
+    "descricao": "NOME DO BOTÃO ÚTIL MAIS",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_USUARIO_FECHAMENTO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA MODULO USUARIO INFORMACAO FECHAMENTO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_USUARIO_MELHOR_DIA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA MODULO USUARIO INFORMACAO MELHOR DIA DE COMPRA",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_ALTERACAO_DADOS_BANCARIOS_ADMIN",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "ENVIA E-MAIL PARA ADMINISTRADORA SOBRE ALTERAÇÃO DE DADOS BANCÁRIOS",
+    "niveis": [
+      "ADMINISTRADORA",
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_ALTERACAO_DADOS_BANCARIOS_CONVENIADA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "ENVIA E-MAIL PARA CONVENIADA SOBRE ALTERAÇÃO DE DADOS BANCÁRIOS",
+    "niveis": [
+      "ADMINISTRADORA",
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_ALTERACAO_DADOS_BANCARIOS_CREDENCIADA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "ENVIA E-MAIL PARA CREDENCIADA SOBRE ALTERAÇÃO DE DADOS BANCÁRIOS",
+    "niveis": [
+      "ADMINISTRADORA",
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "ACEITE_TERMO_CARTAO_APP",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA ACEITE DE TERMO DE RECEBIMENTO CARTÃO NO APP",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": "DATA: DATA LIMITE PARA VENDA SEM TERMO ASSINADO"
+  },
+  {
+    "nome": "DESABILITA_O_USO_DO_CARTAO_FISICO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "DESABILITA O USO DO CARTÃO FÍSICO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_EXIBE_COLUNA_DESCONTO_CONVENIADA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "EXIBE COLUNA DESCONTO DE CONVENIADA NO RELATÓRIO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "NOM_MENSAGEM_BLOQUEIO_ACESSO_APP",
+    "tipo": "STRING_NOT_EMPTY",
+    "descricao": "MENSAGEM QUANDO BLOQUEIA O ACESSO AO APP POR TENTATIVAS",
+    "niveis": [
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "USUARIO_RV_HUB",
+    "tipo": "STRING_NOT_EMPTY",
+    "descricao": "CREDENCIAIS RV CLIENT ID",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": "STRING_NOT_EMPTY: CREDENCIAIS RV CLIENT SECRET"
+  },
+  {
+    "nome": "USUARIO_SICREDI_PIX",
+    "tipo": "STRING_NOT_EMPTY",
+    "descricao": "CLIENT ID",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": "STRING_NOT_EMPTY: CLIENT SECRET; FLG_CERT_PIX: CERTIFICADO"
+  },
+  {
+    "nome": "SENHA_RECARGA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "OBRIGA INFORMAR SENHA RECARGA",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "SENHA_PAGAMENTO_CONTA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "OBRIGA INFORMAR SENHA PAGAMENTO CONTA",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "SENHA_SAQUE_PIX",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "OBRIGA INFORMAR SENHA SAQUE PIX",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "SENHA_AJUSTE_LIMITE",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "OBRIGA INFORMAR SENHA AJUSTE DE LIMITE",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "HORA_PRIMEIRO_ACESSO",
+    "tipo": "HORA",
+    "descricao": "HORÁRIO ATIVO INICIAL",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": "HORA: HORÁRIO ATIVO FINAL"
+  },
+  {
+    "nome": "VALIDA_CPF_PRIMEIRO_ACESSO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "VALIDA CPF PRIMEIRO ACESSO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "VALIDA_NASCTO_PRIMEIRO_ACESSO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "VALIDA DATA NASCTO. PRIMEIRO ACESSO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_DISABLE_DUPLO_FATOR_APP",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "DESABILITA VERIFICAÇÃO EM DUAS ETAPAS TODO APP",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_DISABLE_DUPLO_FATOR_RECARGA_APP",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "DESABILITA VERIFICAÇÃO EM DUAS ETAPAS RECARGA",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_DISABLE_DUPLO_FATOR_PRODUTO_SERVICO_APP",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "DESABILITA VERIFICAÇÃO EM DUAS ETAPAS PRODUTOS/SERVIÇOS",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_DISABLE_DUPLO_FATOR_AJUSTE_LIMITE_APP",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "DESABILITA VERIFICAÇÃO EM DUAS ETAPAS AJUSTE DE LIMITE",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "EMAIL_OU_CELULAR_OBRIGATORIO_CADASTRO_ALTERACAO_USUARIOS",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "EMAIL OU CELULAR OBRIGATORIO NO CADASTRO E OU ALTERACAO DE FUNCIONARIOS",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "CPF_E_DATANASCTO_OBRIGATORIO_CADASTRO_ALTERACAO_USUARIOS",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "CPF E DATA DE NASCIMENTO OBRIGATORIOS NO CADASTRO E OU ALTERACAO DE FUNCIONARIOS",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_ALTERA_SENHA_CARTAO_SEM_VALIDAR_CVV",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "PERMITE ALTERAR SENHA DO CARTAO INFORMANDO SEM VALIDAR CVV",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_VALIDA_TAMANHO_SENHA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "VALIDA TAMANHO DA SENHA",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": "INTEIRO: TAMANHO MÁXIMO DA SENHA; INTEIRO: TAMANHO MÍNIMO DA SENHA"
+  },
+  {
+    "nome": "FLG_HABILITA_ALTERACAO_VLR_LIMITE",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA ALTERAÇÃO DO VALOR LIMITE DOS FUNCIONARIOS",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": "",
+    "observacao": "Permite ao colaborador titular personalizar o próprio limite de crédito (entre 0 e o teto máximo estabelecido pela conveniada), estendendo-se inclusive para os cartões de seus dependentes. Essa personalização é feita diretamente pelo usuário através do App Meu Cartão ConvCard (Apps PJ)."
+  },
+  {
+    "nome": "FLG_OBRIGA_INFORMAR_TIPO_CARTAO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "OBRIGATÓRIO INFORMAR TIPO DE CARTÃO NO CADASTRO DE FUNCIONÁRIOS.",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "CONSIDERA_EMPRESAS_TRANSFERENCIA_AO_TRAZER_COMPRAS_MES_ATUAL",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "CONSIDERA EMPRESAS DE TRANSFERENCIA AO TRAZER AS COMPRAS DO FUNCIONARIO PARA O MES ATUAL.",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "REMOVER_OBRIGATORIEDADE_ITENS_VENDA_CARDSE_ELO_CIELO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "REMOVE OBRIGATORIEDADE DE ITENS DE VENDA PARA TIPOS DE TRANSACAO CARDSE, ELO E CIELO.",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "LIBERACAO_ACESSO_APP_CONVENIADA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "PERMITE REALIZAR LIBERAÇÃO DE ACESSO NO APP PELA CONVENIADA",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "ALTERA_LIMITE_LAYOUT07",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA ALTERAÇÃO DE LIMITE NO LAYOUT 07 DA IMPORTAÇÃO CENTRALIZADA",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "CONFIRMACAO_DIRETA_CAPTACAO_CREDITOS",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "REMOVE O PASSO DE CONFIRMAÇÃO DE CAPTAÇÃO DE CRÉDITO POR PARTE DA ADMINISTRADORA, A CONVENIADA JÁ PODE TRANSFERIR O CRÉDITO DIRETAMENTE",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "HABILITA_NFSE",
+    "tipo": "FLG_CERT_PIX",
+    "descricao": "CERTIFICADO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": "INTEIRO: SÉRIE"
+  },
+  {
+    "nome": "HABILITA_TAXA_SITEF",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA CONFIG TAXA LOJA SITEF",
+    "niveis": [
+      "ADMINISTRADORA",
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": "DECIMAL_FORMATADO: VALOR PADRÃO PRC_SITEF CAD_905; FLG_SIM_NAO: FLG ALTERAR PRC_SITEF CAD_905"
+  },
+  {
+    "nome": "BLOQUEIA_CANCELAMENTO_VENDA",
+    "tipo": "CANAIS_VENDA",
+    "descricao": "APLICAÇEÕS QUE PODEM CANCELAR",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "PERMITE_EXCLUSAO_GERAL_MULTIPLOS_CREDITOS",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "PERMITE EXCLUIR MÚLTIPLOS CRÉDITOS VIA LANÇAMENTO GERAL CAD_840",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "MENSAGEM_BLOQUEIO_APP",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "PERSONALIZA MENSAGEM AVISO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": "STRING_NOT_EMPTY: MSG. BLOQUEIO USUÁRIO PERMITE DESBLOQUEAR; STRING_NOT_EMPTY: MSG. BLOQUEIO USUÁRIO NÃO PERMITE DESBLOQUEAR"
+  },
+  {
+    "nome": "EXIBE_CARTOES_CANCELADOS_APP",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "EXIBE CARTÕES CANCELADOS NO APP",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": "INTEIRO: QUANTIDADE DE DIAS EXIBIR APÓS CANCELAMENTO"
+  },
+  {
+    "nome": "FLG_CONGELA_CREDITOS_NO_NAME",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "CONGELA TRANSFERÊNCIA DE SALDO NO APP",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_MULTIPLOSGRUPOSBAIXABOLREGISTSICREDI",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "USAR MULTIPLOS GRUPOS NA BAIXA DO BOLETO REGISTRADO SICREDI",
+    "niveis": [
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": "COD_GRUPOADMIN_SPLIT_VIRGULA: CÓDIGO DOS GRUPOS DE ADMINISTRADORAS"
+  },
+  {
+    "nome": "FLG_BOLETOADICIONAL",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA BOLETO ADICIONAL",
+    "niveis": [
+      "ADMINISTRADORA",
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_LIB_REIMPRESSAO_BOL_REGISTRADO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "LIBERA REIMPRESSAO BOLETO REGISTRADO JA BAIXADO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_MOSTRASITBOL",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "MOSTRA COL SITUAÇÃO NAS TABELAS BOLETO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "HABILITA_BAIXA_BOLETO_WEBHOOK",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITAR A BAIXA DE BOLETOS VIA WEBHOOK",
+    "niveis": [
+      "ADMINISTRADORA",
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": "INTEIRO: CÓDIGO DE USUÁRIO PARA LOGAR A BAIXA DOS BOLETOS"
+  },
+  {
+    "nome": "IGNORAR_REGISTRO_BOLETO_CNPJ_IGUAL",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "QUANDO HABILITADO, IGNORA O REGISTRO ONLINE DE BOLETOS EM QUE O CNPJ DO PAGADOR SEJA IGUAL AO CNPJ DO BENEFICIÁRIO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "REMOVEDOWNLOADFATURA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "RETIRA O BOTAO DE DOWNLOAD FATURA BOLETO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_SOLICITA_SENHA_EXCL_ESTO_BOLETO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "SOLICITAR SENHA DE SUPERVISOR QUANDO FOR CANCELAR/ESTORNAR BOLETO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "WORKFLOW_APROVACAO_DADOS_BANCARIOS_LOJA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA WORKFLOW DE APROVAÇÃO DE ALT. DE DADOS BANCÁRIOS",
+    "niveis": [
+      "ADMINISTRADORA",
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "APROVACAO_DUPLO_FATOR_USUARIO_REVISAO",
+    "tipo": "STRING_NOT_EMPTY",
+    "descricao": "CÓD. USUARIOS PERMITIDOS PARA REVISAO PELA TELA CAD_993 (SEPARADO POR VIRGULA)",
+    "niveis": [
+      "ADMINISTRADORA",
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": "STRING_NOT_EMPTY: EMAILS QUE RECEBERÃO A NOTIFICAÇÃO DE NOVA APROVAÇÃO (SEPARADO POR VIRGULA)"
+  },
+  {
+    "nome": "HABILITA_DETALHE_PARCELAS_COMPROVANTE",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA DETALHAMENTO DE PARCELAS NO COMPROVANTE CONVCARD",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO ADMIN",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_HABILITAR_CONTAS_PGRECEB_UNIFICADO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA O USO DA TELA BAIXA DE CONTAS A PAGAR/RECEBER UNIFICADO (CAD_741)",
+    "niveis": [
+      "ADMINISTRADORA",
+      "GRUPO ADMIN",
+      "INST. FINAN."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "HABILITA_DUPLO_FATOR_REPASSE_GRUPOADMIN",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA DUPLO FATOR NAS TELAS DE REPASSE DO GRUPOADMIN",
+    "niveis": [
+      "GRUPO ADMIN"
+    ],
+    "auxiliares": "STRING_NOT_EMPTY: CODIGO USUARIOS PERMITIDOS SEPARADOS POR VIRGULA"
+  },
+  {
+    "nome": "ALTER_PRC_ADMINISTRA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "PERM. ALT. PRC_ADMINISTRA CAD_905 ADMIN.",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "BLOC_CNPJ_RAIZ_GRLOJ",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "DESB. RESTRIÇÃO POR CNPJ RAIZ GRUPO LOJA",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "BLOQALTDADOSCONTA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "BLOQ. ALT. DE DADOS CONTA CORRENTE VIA MÓD. ADMIN.",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "BLOQ_DIAVENCTOCONVE",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "INIBIR CAMPO VENCTO CONVENIADA",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "COD_BANCOREMCRD",
+    "tipo": "COD_BANCO",
+    "descricao": "CÓDIGO BANCO PARA REMESSA DE CRÉDITO",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "COD_GRUPREDEASSOCI",
+    "tipo": "COD_GRUPOADMIN",
+    "descricao": "GRUPO DE ADMINISTRADORAS ASSOCIAÇÃO COMERCIAL",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "COMPROVANTE_PERSONAL",
+    "tipo": "STRING_NOT_EMPTY",
+    "descricao": "MENSAGEM PERSONALIZADA COMPROVANTE",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": "STRING_NOT_EMPTY: LINHA DE MENSAGEM 1"
+  },
+  {
+    "nome": "EXIBECAMPOTRANSPBM",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "EXIBE CAMPO TRANS. PBM CAD_863",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_ALTERDATMOVTO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "PERMITE ALTERACAO DATA MOVIMENTO",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_ATIBLOQCADUSUA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "ATIVA CONDICAO BLOQUEIO USUARIO CARTAO",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_ATUALIZAREPRE",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "OBRIGA ATUALIZACAO DO REPRE. LEGAL",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": "INTEIRO: QTD. DIAS LIMITE PARA ATUALIZAR"
+  },
+  {
+    "nome": "FLG_BLOQSENHACRT",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "BLOQUEIA O CAMPO FLG_SENHACRT CAD_863",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": "FLG_SIM_NAO: VALOR PADRÃO"
+  },
+  {
+    "nome": "FLG_CADSENHA4CPF",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "APENAS GERACAO SENHA 4 DIGITOS CPF CAD_863",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_CEDENTEXTRCOB",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "IMPRIMIR DADOS CEDENTE EXTRATO COBRANÇA",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_CNPJDUPLO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "PERMITE DUPLICAR O CNPJ/CPF CAD_863",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_CPFUNICO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "BLOQUEAR REGIS. CPF JA CAD. P/ CRT <> 005",
+    "niveis": [
+      "ADMINISTRADORA",
+      "GRUPO CONV."
+    ],
+    "auxiliares": "FLG_SIM_NAO: GRUP. CONV. BLOQUEAR REGIS. CPF JA CAD."
+  },
+  {
+    "nome": "FLG_EXPCRTCONVBLOQ",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "EXPORTAR CARTÃO CONVENIADAS BLOQUEADAS",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_FUNCOBRIGCAD_508",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "OBRIGATÓRIO INFORMAR USUARIO CAD_508",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_GERARMENSALIDADE",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "GERAR MENSALIDADE CONVÊNIO",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_INFODATLIBERA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "CAMPO DATA LIBERACAO NO LANC.DE CRÉDITO",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA",
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_LIBBLOQDEFCONVE",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "LIB. BLOQ. DEFINITIVO COM TRANS. PENDENTE",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_MOSTRACOMISCONV",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "REL_078 - MOSTRA COLUNA COMISSÃO CONVCARD",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_NOVO_REPASSE",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA NOVO SISTEMA DE REPASSE",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": "FLG_SIM_NAO: INF REPASSE TELAS CONTAS RECEBIDAS E RECEBER GRUPOCRED E CRED"
+  },
+  {
+    "nome": "FLG_N_EXIB_CRED_BLOQ",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "NÃO EXIBE CREDENCIADAS BLOQUEADAS REL_029",
+    "niveis": [
+      "ADMINISTRADORA",
+      "CONVENIADA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_OCULTCONVNAODISP",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "OCULTA CONVENIADA NAO DISP P COMPRA",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_PARCARQCRT",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITAR PARC. CONVENIADO ARQ. CARTÃO",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_REMOVEARQCRT",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "DESABILITA IMPRESSÃO ARQ. CARTÃO",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_BLOQBAIXACONTASRECEBER",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "BLOQ. BAIXA CONTAS A REC. JUNTO C/ RET. DE REM. DE BOLETO",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_PARCELAMENTO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA PARCELAMENTO NA COMPRA",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_RATEIO_ACI",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA O RATEIO PARA DUAS ACIS",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_REDEASSOCI",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA ASSOCIAÇÃO COMERCIAL",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": "FLG_SIM_NAO: BLOQ. ALT. VIA MÓD. ADMIN. DO CAMPO ASSOCIAÇÃO COMERCIAL"
+  },
+  {
+    "nome": "FLG_REPASSEGARANTIDO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "REPASSE CRÉDITO GARANTIDO P/ CREDENCIADA",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_TAGTIPOPESSOA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "OPÇÃO CAD. TIP_PESSOA NO CADASTRO CRED CAD_011",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_TERMONOVO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA O GERADOR DE TERMO POR REDE",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_TPPGDEBOUREG",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "TIPO PAGTO CAD_863 BOL. BANC. C/ REGISTRO",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_ULTCADASTROSCONVCRED",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA VISU. CONV./CRED. CADASTRADAS NOS ÚLTIMOS 30 DIAS",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_VENDASABCFARMA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA CAMPO PARA CONTROLE ABC FARMA",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_VLRJUROSDIARIOS",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "COBRANÇA DE JUROS DIARIOS EM R$",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": "DECIMAL_FORMATADO: PERCENTUAL DE JUROS AO DIA; STRING_NOT_EMPTY: ADENO AUXILIAR"
+  },
+  {
+    "nome": "HABILITA_CARTA_FIANC",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA CONFIGURACAO DE CARTA FIANCA",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "HABILITA_COD_MATRIZ",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITAR CAMPO CÓDIGO MATRIZ CAD_905",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "HABILITA_TAXA_CIELO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA CONFIG TAXA LOJA CIELO",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": "DECIMAL_FORMATADO: VALOR PADRÃO PRC_CIELO CAD_905; FLG_SIM_NAO: FLG ALTERAR PRC_CIELO CAD_905"
+  },
+  {
+    "nome": "NOM_APELIDOPAT",
+    "tipo": "STRING_NOT_EMPTY",
+    "descricao": "SUBSTITUIRÁ A PALAVRA PAT POR UM APELIDO",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": "STRING_NOT_EMPTY: DESCRIÇÃO FATURA BOLETO"
+  },
+  {
+    "nome": "NOM_DESCAUXFAT_PAT",
+    "tipo": "STRING_NOT_EMPTY",
+    "descricao": "DESCRIÇÃO AUXILIAR PARA FATURA PAT",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "OBRIGACONFIGLIMITCRD",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "OBRIGA CONFIG. LIMITE CREDITO CONVENIADA",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "SEN_ALTMOVTOCONVACI",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "SENHA PARA ALTERAÇÃO DE MOVIMENTAÇÃO",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "SEQ_ANGELONI",
+    "tipo": "INTEIRO",
+    "descricao": "SEQUENCIAL DA EXPORTACAO ANGELONI",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "SEQ_CONCFINC",
+    "tipo": "INTEIRO",
+    "descricao": "CONCILIACAO FINANCEIRO CONVCARD",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "TIP_EXTRATO",
+    "tipo": "FLG_TIP_EXTRATO",
+    "descricao": "TIPO DO EXTRATO",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "VLR_INFREMESSA",
+    "tipo": "FLG_CR_IB",
+    "descricao": "VALOR PADRÃO A SER UTILIZADO / REMESSA CRÉDITO CAD_905",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_CADMULTICRED",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA CADASTRO MULTIPLO DE CREDENCIADAS",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": "COD_GRUPOADMIN_SPLIT_VIRGULA: GRUPOS PARA EXIBIÇÃO DE ADMINISTRADORAS; FLG_SIM_NAO: HABILITA SINCRONIZAÇÃO DE CREDENCIADAS MÓD. ADMINISTRADORA"
+  },
+  {
+    "nome": "FLG_ALERTCREDMULT",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA ALERTA MULTIPLOS CREDITOS CAD_840",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_BARRATRANSFCOMPRA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "BLOQUEIA CAPTACAO DE CREDITO PARA USUARIOS COM MOVIMENTACAO",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_VALIDARCAMPOSIMPORTACAO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "VALIDAR CAMPOS IMPORTAÇÃO DE USUÁRIOS ANTIGA",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "TMP_EXPIRATRANSFERENCIA",
+    "tipo": "INTEIRO",
+    "descricao": "DIAS PARA EXPIRAÇÃO CAPTAÇÃO DE CRÉDITO",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_OCULCRCCEXTRATO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "OCULTA CR/CC DO EXTRATO DO USUÁRIO / DESABILITA NOTIFICAO PUSH CR/CC",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_NOTIFICA_SA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA NOTIFICACAO PUSH DE SALDO ANTERIOR",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_EMAILPERSONAL_REL_635",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA EMAIL PERSONALIZADO REL_635",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": "STRING_NOT_EMPTY: ASSUNTO DO EMAIL; HTML: CORPO DO EMAIL (HTML)"
+  },
+  {
+    "nome": "FLG_LANC_CADLANEV_MES_ANTERIOR",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "PERMITE LANÇAMENTO DE CADLANEV EM COMPETÊNCIA ANTERIOR A ATUAL DA CONVENIADA SE NÃO POSSUI CADCONRC/CADBOLETO",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "INTEGRACAO_FACIL_TECNOLOGIA",
+    "tipo": "STRING_NOT_EMPTY",
+    "descricao": "CREDENCIAIS FACIL CLIENT ID",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": "STRING_NOT_EMPTY: CREDENCIAIS FACIL CLIENT SECRET"
+  },
+  {
+    "nome": "BLOQUEIA_CAMPO_AGENCIADOR",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "BLOQUEIA A ALTERAÇÃO DO CAMPO AGENCIADOR",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "EXIBE_NOME_FUNCIONARIO_MOVIMENTACAO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "EXIBE NOME DO FUNCIONÁRIO NA MOVIMENTAÇÃO",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "HABILITA_CADASTRO_CRED_CNPJ_DUPLICADO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA CADASTRO DE CREDENCIADAS COM CNPJ DUPLICADO DESCONSIDERANDO CREDENCIADAS BLOQUEADAS",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "EXIGE_ACEITE_NOVAS_REGRAS_PAT",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "EXIGE O ACEITE DO TERMO DAS NOVAS REGRAS DO PAT",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "GRUPOS_EMPRESA_RELACIONADOS",
+    "tipo": "STRING_NOT_EMPTY",
+    "descricao": "RELACIONA GRUPOS DE EMPRESAS",
+    "niveis": [
+      "GRUPO CONV."
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "EXCESBLOQCADUSUQUAR",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "EXCEÇÃO DE BLOQUEIO CADASTRAR USUARIOS",
+    "niveis": [
+      "CONVENIADA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "EXCESBLOQIMPUSUQUAR",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "EXCEÇÃO BLOQUEIO DE IMPORT. DE USUÁRIO",
+    "niveis": [
+      "CONVENIADA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "EXCESBLOQLIMITQUARE",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "EXCEÇÃO BLOQUEIO ALTERAÇÃO DE LIMITE",
+    "niveis": [
+      "CONVENIADA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "EXCESBLOQSITQUARENTE",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "EXCEÇÃO BLOQU. DE REATIVAÇÃO DE CARTÕES",
+    "niveis": [
+      "CONVENIADA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_IGNORABLOQAUTO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "IGNORA BLOQUEIO AUTOMATICO",
+    "niveis": [
+      "CONVENIADA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_IMPDEPCOMOTITUL",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA PARÂM.PARA IMP. DEP. PELO TITULAR",
+    "niveis": [
+      "CONVENIADA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_INFOVLRCUPOM",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "DETALHAR VALOR SINDICATO NO COMPROVANTE",
+    "niveis": [
+      "CONVENIADA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_LIMITE_LIQUIDO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "LIMITE LÍQUIDO NO MOVIMENTO",
+    "niveis": [
+      "CONVENIADA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_MATRICULAUNICA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "BLOQUEAR MATRICULAS DUPLICADAS",
+    "niveis": [
+      "CONVENIADA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_NAOEXIBCREDEXP",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "NÃO EXIBE CRÉDITO EXPIRADO (CAD_748)",
+    "niveis": [
+      "CONVENIADA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "NOM_DESCFATURA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "HABILITA DESCRICAO FATURA BOLETO",
+    "niveis": [
+      "CONVENIADA"
+    ],
+    "auxiliares": "STRING_NOT_EMPTY: TEXTO DESCRICAO"
+  },
+  {
+    "nome": "FLG_REMOVEDESCEMP",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "REMOVE DESCONTO EMPRESA CAD_770/REL_043",
+    "niveis": [
+      "CONVENIADA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_REL520",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "PERMITE UTILIZAR O REL_520 NO MODULO CONVENIADA",
+    "niveis": [
+      "CONVENIADA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_ACESSORELCONUSU",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "LIBERAR ACESSO REL CONSULTA USUARIO",
+    "niveis": [
+      "CREDENCIADA"
+    ],
+    "auxiliares": "STRING_NOT_EMPTY: CONVENIADAS LIBERADAS SEPARADAS POR PONTO E VIRGULA"
+  },
+  {
+    "nome": "FLG_PERMTAXAADMZERO",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "PERM. CAD. TAXA ADMIN ZERO PARA CREDENCIADA",
+    "niveis": [
+      "CREDENCIADA"
+    ],
+    "auxiliares": ""
+  },
+  {
+    "nome": "FLG_PRC_ADMINISTRA_MAXIMO_EMPRESA",
+    "tipo": "FLG_SIM_NAO",
+    "descricao": "PERMITE PREENCHER O CAMPO PRC ADMINISTRA MAXIMO NA TELA CAD_863",
+    "niveis": [
+      "ADMINISTRADORA"
+    ],
+    "auxiliares": "",
+    "observacao": "Este parâmetro libera o campo 'Taxa administrativa máxima' no cadastro das conveniadas da administradora. Quando ativado (SIM), permite definir um limite (teto) para a taxa. Exemplo de uso: Com a nova regulamentação do PAT, a taxa padrão geral pode ser 3,6%, mas para atender a uma licitação, você pode definir um teto de 2,5% para uma conveniada específica. Assim, se uma credenciada já possuir uma taxa menor (ex: 2%), será mantida a taxa de 2%. Mas se a credenciada possuir uma taxa maior (ex: 3,6%), a cobrança será limitada ao teto de 2,5%."
+  }
+
+]
