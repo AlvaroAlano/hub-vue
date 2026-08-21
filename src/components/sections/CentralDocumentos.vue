@@ -41,7 +41,11 @@
               Abrir
             </a>
 
-            <a :href="doc.fileDownload" download title="Fazer Download" :class="['w-8 h-8 flex items-center justify-center text-muted-foreground rounded-md transition-colors', doc.theme.btnBg, doc.theme.btnHoverText]">
+            <button v-if="doc.fileDownload.startsWith('http')" @click="copyText($event, doc.linkAbrir)" title="Copiar link" :class="['w-8 h-8 flex items-center justify-center text-muted-foreground rounded-md transition-colors', doc.theme.btnBg, doc.theme.btnHoverText]">
+              <Copy class="w-4 h-4" />
+            </button>
+
+            <a v-else :href="doc.fileDownload" download title="Fazer Download" :class="['w-8 h-8 flex items-center justify-center text-muted-foreground rounded-md transition-colors', doc.theme.btnBg, doc.theme.btnHoverText]">
               <Download class="w-4 h-4" />
             </a>
           </div>
@@ -102,7 +106,8 @@
 
 <script setup>
 import { ref, computed } from 'vue';
-import { Building2, ChevronDown, CloudDownload, Download, ExternalLink, FileCode, FileText, FileX2, FolderOpen, Receipt, Search } from '@lucide/vue'
+import { Building2, ChevronDown, CloudDownload, Copy, Download, ExternalLink, FileCode, FileText, FileX2, FolderOpen, Receipt, Search } from '@lucide/vue'
+import { copyText } from '../../utils';
 
 const searchQuery = ref('');
 
@@ -245,6 +250,23 @@ const documentos = ref([
   },
   {
     id: 9,
+    title: 'Documentação API - Consulta de Vendas (Convênio & Associado)',
+    linkAbrir: 'https://convc.link/jcAVz',
+    fileDownload: 'https://convc.link/jcAVz',
+    icone: FileCode,
+    theme: {
+      hoverBorder: 'hover:border-violet-500',
+      bgGradient: 'from-violet-500/5 group-hover:from-violet-500/10',
+      iconBg: 'bg-violet-100 dark:bg-violet-900/40',
+      iconColor: 'text-violet-600 dark:text-violet-400',
+      textHover: 'group-hover:text-violet-600 dark:group-hover:text-violet-400',
+      btnBg: 'bg-violet-100/50 dark:bg-violet-900/20 hover:bg-violet-100 dark:hover:bg-violet-900/40',
+      btnText: 'text-violet-600 dark:text-violet-400',
+      btnHoverText: 'hover:text-violet-600 dark:hover:text-violet-400'
+    }
+  },
+  {
+    id: 10,
     title: 'Documentação API - Convcard PJ (Integração REST / RH)',
     linkAbrir: 'https://documenter.getpostman.com/view/6290764/Tz5s2vy9',
     fileDownload: 'https://documenter.getpostman.com/view/6290764/Tz5s2vy9',

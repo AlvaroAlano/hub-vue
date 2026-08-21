@@ -87,45 +87,80 @@
           </div>
         </a>
 
-        <a href="https://convc.link/w7jCa" target="_blank" rel="noopener noreferrer" class="searchable-item bg-card border border-border p-3 rounded-xl flex items-center gap-3 hover:border-purple-500 hover:shadow-sm transition-all group relative">
-          <div class="w-8 h-8 rounded bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-200 flex items-center justify-center font-bold text-xs group-hover:bg-purple-600 group-hover:text-white transition-colors flex-shrink-0">
-            <Code class="w-4 h-4" />
-          </div>
-          <span class="text-sm font-medium text-foreground text-wrap leading-tight">API Consulta Vendas (Não-TEF)</span>
+        <div class="searchable-item bg-card border border-border rounded-xl hover:border-purple-500 hover:shadow-sm transition-all group relative">
+          <a href="https://convc.link/w7jCa" target="_blank" rel="noopener noreferrer" class="p-3 pr-9 flex items-center gap-3">
+            <div class="w-8 h-8 rounded bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-200 flex items-center justify-center font-bold text-xs group-hover:bg-purple-600 group-hover:text-white transition-colors flex-shrink-0">
+              <Code class="w-4 h-4" />
+            </div>
+            <span class="text-sm font-medium text-foreground text-wrap leading-tight">API Consulta Vendas (Não-TEF)</span>
+          </a>
+          <button @click="copyText($event, 'https://convc.link/w7jCa')" title="Copiar link" class="absolute top-1.5 right-1.5 w-6 h-6 flex items-center justify-center rounded-md text-muted-foreground hover:text-purple-600 hover:bg-purple-100 dark:hover:bg-purple-900/30 transition-colors">
+            <Copy class="w-3.5 h-3.5" />
+          </button>
           <div class="tooltip-text">
             <strong>Doc. de Integração:</strong><br>Consulta de vendas Não-TEF transacionadas via POS Virtual/Convcard Pay.
           </div>
-        </a>
+        </div>
 
-        <a href="https://convc.link/I63bU" target="_blank" rel="noopener noreferrer" class="searchable-item bg-card border border-border p-3 rounded-xl flex items-center gap-3 hover:border-purple-500 hover:shadow-sm transition-all group relative">
-          <div class="w-8 h-8 rounded bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-200 flex items-center justify-center font-bold text-xs group-hover:bg-purple-600 group-hover:text-white transition-colors flex-shrink-0">
-            <Code class="w-4 h-4" />
-          </div>
-          <span class="text-sm font-medium text-foreground text-wrap leading-tight">API Consulta Vendas (TEF e Não-TEF)</span>
+        <div class="searchable-item bg-card border border-border rounded-xl hover:border-purple-500 hover:shadow-sm transition-all group relative">
+          <a href="https://convc.link/I63bU" target="_blank" rel="noopener noreferrer" class="p-3 pr-9 flex items-center gap-3">
+            <div class="w-8 h-8 rounded bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-200 flex items-center justify-center font-bold text-xs group-hover:bg-purple-600 group-hover:text-white transition-colors flex-shrink-0">
+              <Code class="w-4 h-4" />
+            </div>
+            <span class="text-sm font-medium text-foreground text-wrap leading-tight">API Consulta Vendas (TEF e Não-TEF)</span>
+          </a>
+          <button @click="copyText($event, 'https://convc.link/I63bU')" title="Copiar link" class="absolute top-1.5 right-1.5 w-6 h-6 flex items-center justify-center rounded-md text-muted-foreground hover:text-purple-600 hover:bg-purple-100 dark:hover:bg-purple-900/30 transition-colors">
+            <Copy class="w-3.5 h-3.5" />
+          </button>
           <div class="tooltip-text">
             <strong>Doc. de Integração:</strong><br>Consulta de vendas TEF e Não-TEF transacionadas via POS Virtual/Convcard Pay.
           </div>
-        </a>
+        </div>
 
-        <a href="https://documenter.getpostman.com/view/6290764/Tz5s2vy9" target="_blank" rel="noopener noreferrer" class="searchable-item bg-card border border-border p-3 rounded-xl flex items-center gap-3 hover:border-purple-500 hover:shadow-sm transition-all group relative">
-          <div class="w-8 h-8 rounded bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-200 flex items-center justify-center font-bold text-xs group-hover:bg-purple-600 group-hover:text-white transition-colors flex-shrink-0">
-            <Code class="w-4 h-4" />
+        <div class="searchable-item bg-card border border-border rounded-xl hover:border-purple-500 hover:shadow-sm transition-all group relative">
+          <a href="https://convc.link/jcAVz" target="_blank" rel="noopener noreferrer" class="p-3 pr-9 flex items-center gap-3">
+            <div class="w-8 h-8 rounded bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-200 flex items-center justify-center font-bold text-xs group-hover:bg-purple-600 group-hover:text-white transition-colors flex-shrink-0">
+              <Code class="w-4 h-4" />
+            </div>
+            <span class="text-sm font-medium text-foreground text-wrap leading-tight">API Consulta Vendas (Convênio &amp; Associado)</span>
+          </a>
+          <button @click="copyText($event, 'https://convc.link/jcAVz')" title="Copiar link" class="absolute top-1.5 right-1.5 w-6 h-6 flex items-center justify-center rounded-md text-muted-foreground hover:text-purple-600 hover:bg-purple-100 dark:hover:bg-purple-900/30 transition-colors">
+            <Copy class="w-3.5 h-3.5" />
+          </button>
+          <div class="tooltip-text">
+            <strong>Doc. de Integração:</strong><br>Consulta de vendas TEF e Não-TEF de Convênio (PJ) e Associado (PF), via POS Virtual/Convcard Pay.
           </div>
-          <span class="text-sm font-medium text-foreground text-wrap leading-tight">API Convcard PJ - Integração REST (RH)</span>
+        </div>
+
+        <div class="searchable-item bg-card border border-border rounded-xl hover:border-purple-500 hover:shadow-sm transition-all group relative">
+          <a href="https://documenter.getpostman.com/view/6290764/Tz5s2vy9" target="_blank" rel="noopener noreferrer" class="p-3 pr-9 flex items-center gap-3">
+            <div class="w-8 h-8 rounded bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-200 flex items-center justify-center font-bold text-xs group-hover:bg-purple-600 group-hover:text-white transition-colors flex-shrink-0">
+              <Code class="w-4 h-4" />
+            </div>
+            <span class="text-sm font-medium text-foreground text-wrap leading-tight">API Convcard PJ - Integração REST (RH)</span>
+          </a>
+          <button @click="copyText($event, 'https://documenter.getpostman.com/view/6290764/Tz5s2vy9')" title="Copiar link" class="absolute top-1.5 right-1.5 w-6 h-6 flex items-center justify-center rounded-md text-muted-foreground hover:text-purple-600 hover:bg-purple-100 dark:hover:bg-purple-900/30 transition-colors">
+            <Copy class="w-3.5 h-3.5" />
+          </button>
           <div class="tooltip-text">
             <strong>Doc. de Integração:</strong><br>Importações centralizadas e consultas via REST/JSON no sistema Convcard Pessoa Jurídica. Uso comum: RH de empresas.
           </div>
-        </a>
+        </div>
 
-        <a href="https://aut-h.convcard.com.br/autorizador/docs" target="_blank" rel="noopener noreferrer" class="searchable-item bg-card border border-border p-3 rounded-xl flex items-center gap-3 hover:border-purple-500 hover:shadow-sm transition-all group relative">
-          <div class="w-8 h-8 rounded bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-200 flex items-center justify-center font-bold text-xs group-hover:bg-purple-600 group-hover:text-white transition-colors flex-shrink-0">
-            <FileCode class="w-4 h-4" />
-          </div>
-          <span class="text-sm font-medium text-foreground">API Autorizador Convcard (Manual de Integração)</span>
+        <div class="searchable-item bg-card border border-border rounded-xl hover:border-purple-500 hover:shadow-sm transition-all group relative">
+          <a href="https://aut-h.convcard.com.br/autorizador/docs" target="_blank" rel="noopener noreferrer" class="p-3 pr-9 flex items-center gap-3">
+            <div class="w-8 h-8 rounded bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-200 flex items-center justify-center font-bold text-xs group-hover:bg-purple-600 group-hover:text-white transition-colors flex-shrink-0">
+              <FileCode class="w-4 h-4" />
+            </div>
+            <span class="text-sm font-medium text-foreground">API Autorizador Convcard (Manual de Integração)</span>
+          </a>
+          <button @click="copyText($event, 'https://aut-h.convcard.com.br/autorizador/docs')" title="Copiar link" class="absolute top-1.5 right-1.5 w-6 h-6 flex items-center justify-center rounded-md text-muted-foreground hover:text-purple-600 hover:bg-purple-100 dark:hover:bg-purple-900/30 transition-colors">
+            <Copy class="w-3.5 h-3.5" />
+          </button>
           <div class="tooltip-text">
             <strong>Doc. do Autorizador:</strong><br>Documentação técnica de integração com o autorizador Convcard.
           </div>
-        </a>
+        </div>
 
         <a href="https://site.convcard.com.br/crt/atualizacao" target="_blank" rel="noopener noreferrer" class="searchable-item bg-card border border-border p-3 rounded-xl flex items-center gap-3 hover:border-brand-500 hover:shadow-sm transition-all group relative">
           <div class="w-8 h-8 rounded bg-brand-100 text-brand-700 dark:bg-brand-900 dark:text-brand-200 flex items-center justify-center font-bold text-xs group-hover:bg-brand-600 group-hover:text-white transition-colors flex-shrink-0">
@@ -143,5 +178,6 @@
 </template>
 
 <script setup>
-import { ArrowLeftRight, Building2, Code, CreditCard, FileCode, FlaskConical, Monitor, Network, User, Users, Wallet } from '@lucide/vue'
+import { ArrowLeftRight, Building2, Code, Copy, CreditCard, FileCode, FlaskConical, Monitor, Network, User, Users, Wallet } from '@lucide/vue'
+import { copyText } from '../../utils';
 </script>
