@@ -225,6 +225,40 @@ const documentos = ref([
       btnText: 'text-sky-600 dark:text-sky-400',
       btnHoverText: 'hover:text-sky-600 dark:hover:text-sky-400'
     }
+  },
+  {
+    id: 8,
+    title: 'Documentação API - Consulta de Vendas (TEF e Não-TEF)',
+    linkAbrir: 'https://convc.link/I63bU',
+    fileDownload: 'https://convc.link/I63bU',
+    icone: FileCode,
+    theme: {
+      hoverBorder: 'hover:border-teal-500',
+      bgGradient: 'from-teal-500/5 group-hover:from-teal-500/10',
+      iconBg: 'bg-teal-100 dark:bg-teal-900/40',
+      iconColor: 'text-teal-600 dark:text-teal-400',
+      textHover: 'group-hover:text-teal-600 dark:group-hover:text-teal-400',
+      btnBg: 'bg-teal-100/50 dark:bg-teal-900/20 hover:bg-teal-100 dark:hover:bg-teal-900/40',
+      btnText: 'text-teal-600 dark:text-teal-400',
+      btnHoverText: 'hover:text-teal-600 dark:hover:text-teal-400'
+    }
+  },
+  {
+    id: 9,
+    title: 'Documentação API - Convcard PJ (Integração REST / RH)',
+    linkAbrir: 'https://documenter.getpostman.com/view/6290764/Tz5s2vy9',
+    fileDownload: 'https://documenter.getpostman.com/view/6290764/Tz5s2vy9',
+    icone: FileCode,
+    theme: {
+      hoverBorder: 'hover:border-indigo-500',
+      bgGradient: 'from-indigo-500/5 group-hover:from-indigo-500/10',
+      iconBg: 'bg-indigo-100 dark:bg-indigo-900/40',
+      iconColor: 'text-indigo-600 dark:text-indigo-400',
+      textHover: 'group-hover:text-indigo-600 dark:group-hover:text-indigo-400',
+      btnBg: 'bg-indigo-100/50 dark:bg-indigo-900/20 hover:bg-indigo-100 dark:hover:bg-indigo-900/40',
+      btnText: 'text-indigo-600 dark:text-indigo-400',
+      btnHoverText: 'hover:text-indigo-600 dark:hover:text-indigo-400'
+    }
   }
 ]);
 

@@ -91,9 +91,29 @@
           <div class="w-8 h-8 rounded bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-200 flex items-center justify-center font-bold text-xs group-hover:bg-purple-600 group-hover:text-white transition-colors flex-shrink-0">
             <Code class="w-4 h-4" />
           </div>
-          <span class="text-sm font-medium text-foreground">API Consulta Vendas</span>
+          <span class="text-sm font-medium text-foreground text-wrap leading-tight">API Consulta Vendas (Não-TEF)</span>
           <div class="tooltip-text">
-            <strong>Doc. de Integração:</strong><br>Consulta de vendas transacionadas via POS Virtual/Convcard Pay.
+            <strong>Doc. de Integração:</strong><br>Consulta de vendas Não-TEF transacionadas via POS Virtual/Convcard Pay.
+          </div>
+        </a>
+
+        <a href="https://convc.link/I63bU" target="_blank" rel="noopener noreferrer" class="searchable-item bg-card border border-border p-3 rounded-xl flex items-center gap-3 hover:border-purple-500 hover:shadow-sm transition-all group relative">
+          <div class="w-8 h-8 rounded bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-200 flex items-center justify-center font-bold text-xs group-hover:bg-purple-600 group-hover:text-white transition-colors flex-shrink-0">
+            <Code class="w-4 h-4" />
+          </div>
+          <span class="text-sm font-medium text-foreground text-wrap leading-tight">API Consulta Vendas (TEF e Não-TEF)</span>
+          <div class="tooltip-text">
+            <strong>Doc. de Integração:</strong><br>Consulta de vendas TEF e Não-TEF transacionadas via POS Virtual/Convcard Pay.
+          </div>
+        </a>
+
+        <a href="https://documenter.getpostman.com/view/6290764/Tz5s2vy9" target="_blank" rel="noopener noreferrer" class="searchable-item bg-card border border-border p-3 rounded-xl flex items-center gap-3 hover:border-purple-500 hover:shadow-sm transition-all group relative">
+          <div class="w-8 h-8 rounded bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-200 flex items-center justify-center font-bold text-xs group-hover:bg-purple-600 group-hover:text-white transition-colors flex-shrink-0">
+            <Code class="w-4 h-4" />
+          </div>
+          <span class="text-sm font-medium text-foreground text-wrap leading-tight">API Convcard PJ - Integração REST (RH)</span>
+          <div class="tooltip-text">
+            <strong>Doc. de Integração:</strong><br>Importações centralizadas e consultas via REST/JSON no sistema Convcard Pessoa Jurídica. Uso comum: RH de empresas.
           </div>
         </a>
 
@@ -101,7 +121,7 @@
           <div class="w-8 h-8 rounded bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-200 flex items-center justify-center font-bold text-xs group-hover:bg-purple-600 group-hover:text-white transition-colors flex-shrink-0">
             <FileCode class="w-4 h-4" />
           </div>
-          <span class="text-sm font-medium text-foreground">Manual de Integração Convcard</span>
+          <span class="text-sm font-medium text-foreground">API Autorizador Convcard (Manual de Integração)</span>
           <div class="tooltip-text">
             <strong>Doc. do Autorizador:</strong><br>Documentação técnica de integração com o autorizador Convcard.
           </div>
