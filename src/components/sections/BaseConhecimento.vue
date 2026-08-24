@@ -613,81 +613,6 @@ Fico no aguardo.</div>
         </div>
       </TutorialCard>
 
-      <TutorialCard
-        v-if="isVisible(11)"
-        title="Identificação de BINs e Prefixos"
-        summary="Prefixos de cartões tradicionais e BINs da rede ELO." 
-        icon="fa-credit-card" 
-        colorBg="bg-blue-100" 
-        colorText="text-blue-600"
-      >
-        <div class="space-y-6">
-          <div>
-            <strong class="block text-foreground mb-2 uppercase text-xs tracking-wider">
-              <CreditCard class="w-3 h-3 inline mr-1 text-brand-500" /> Convcard Tradicional
-            </strong>
-            <div class="bg-card p-3 rounded border border-border flex items-center justify-between shadow-sm">
-              <span class="text-sm font-medium text-foreground">Prefixo Padrão</span>
-              <div class="flex items-center gap-2">
-                <code class="font-mono font-bold text-foreground bg-muted px-2 py-1 rounded">639321</code>
-                <button @click="copyText($event, '639321')" class="text-muted-foreground hover:text-primary transition-colors" title="Copiar prefixo">
-                  <Copy class="w-3 h-3" />
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <strong class="block text-foreground mb-2 uppercase text-xs tracking-wider">
-              <Network class="w-3 h-3 inline mr-1 text-blue-500" /> BINs ELO
-            </strong>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-              
-              <div class="bg-card p-3 rounded border border-border flex flex-col md:flex-row md:items-center justify-between gap-2 shadow-sm">
-                <span class="text-xs font-medium text-foreground">Util</span>
-                <div class="flex items-center gap-2">
-                  <code class="font-mono text-xs font-bold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded border border-blue-100 dark:border-blue-800">50901039</code>
-                  <button @click="copyText($event, '50901039')" class="text-muted-foreground hover:text-primary transition-colors">
-                    <Copy class="w-3 h-3" />
-                  </button>
-                </div>
-              </div>
-
-              <div class="bg-card p-3 rounded border border-border flex flex-col md:flex-row md:items-center justify-between gap-2 shadow-sm">
-                <span class="text-xs font-medium text-foreground">Convcard</span>
-                <div class="flex items-center gap-2">
-                  <code class="font-mono text-xs font-bold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded border border-blue-100 dark:border-blue-800">50901049</code>
-                  <button @click="copyText($event, '50901049')" class="text-muted-foreground hover:text-primary transition-colors">
-                    <Copy class="w-3 h-3" />
-                  </button>
-                </div>
-              </div>
-
-              <div class="bg-card p-3 rounded border border-border flex flex-col md:flex-row md:items-center justify-between gap-2 shadow-sm">
-                <span class="text-xs font-medium text-foreground">Convnet <span class="text-[10px] text-muted-foreground font-normal">(em uso - Pré-pago)</span></span>
-                <div class="flex items-center gap-2">
-                  <code class="font-mono text-xs font-bold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded border border-blue-100 dark:border-blue-800">50929487</code>
-                  <button @click="copyText($event, '50929487')" class="text-muted-foreground hover:text-primary transition-colors">
-                    <Copy class="w-3 h-3" />
-                  </button>
-                </div>
-              </div>
-
-              <div class="bg-card p-3 rounded border border-border flex flex-col md:flex-row md:items-center justify-between gap-2 shadow-sm">
-                <span class="text-xs font-medium text-foreground">Convnet Novo</span>
-                <div class="flex items-center gap-2">
-                  <code class="font-mono text-xs font-bold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded border border-blue-100 dark:border-blue-800">50901050</code>
-                  <button @click="copyText($event, '50901050')" class="text-muted-foreground hover:text-primary transition-colors">
-                    <Copy class="w-3 h-3" />
-                  </button>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </TutorialCard>
-
     </div>
   </Transition>
 
@@ -721,8 +646,8 @@ import { ref, computed } from 'vue'
 import TutorialCard from '../TutorialCard.vue'
 import {
   AlertCircle, AlertTriangle, BookOpen, Check, ChevronLeft, ChevronRight, ClipboardList, CloudUpload,
-  Copy, CreditCard, Download, HandCoins, Link, ListChecks, Mail, Megaphone,
-  Network, Receipt, Search, Settings, ShieldCheck, Target, Ticket, ToggleLeft, Wrench
+  Copy, Download, HandCoins, Link, ListChecks, Mail, Megaphone,
+  Receipt, Search, Settings, ShieldCheck, Target, Ticket, ToggleLeft, Wrench
 } from '@lucide/vue'
 import { copyText } from '../../utils'
 import { useSearch } from '../../composables/useSearch.js'
@@ -731,7 +656,7 @@ import { useSearch } from '../../composables/useSearch.js'
 // Mantém a seção compacta mesmo com muitos tutoriais: cards em coluna
 // única e largura total (sem o "pulo" de reposicionar no CSS Grid),
 // mas só uma página de cada vez fica renderizada.
-const totalCards = 11
+const totalCards = 10
 const pageSize = 10
 const totalPages = Math.ceil(totalCards / pageSize)
 const currentPage = ref(1)

@@ -31,29 +31,39 @@
           v-for="item in navItems"
           :key="item.href"
           :href="item.href"
+          @click="activeHref = item.href"
+          :aria-current="activeHref === item.href ? 'true' : undefined"
           :class="[
             'relative flex items-center gap-3 px-3 py-2 rounded-lg',
-            'text-sm font-medium text-muted-foreground',
-            'hover:text-foreground hover:bg-accent/10',
+            'text-sm font-medium',
             'transition-all duration-150 group outline-none',
             'focus-visible:ring-2 focus-visible:ring-ring',
             isCollapsed ? 'justify-center' : '',
+            activeHref === item.href
+              ? 'text-foreground bg-brand-500/10 dark:bg-brand-400/10 font-semibold'
+              : 'text-muted-foreground hover:text-foreground hover:bg-accent/10',
           ]"
         >
           <!-- Ícone Lucide -->
           <component
             :is="item.icon"
             :size="18"
-            class="shrink-0 transition-transform duration-150 group-hover:scale-110"
+            :class="[
+              'shrink-0 transition-transform duration-150 group-hover:scale-110',
+              activeHref === item.href ? 'text-brand-600 dark:text-brand-400' : '',
+            ]"
           />
 
           <!-- Label (visível quando expandido) -->
           <span v-show="!isCollapsed" class="truncate">{{ item.label }}</span>
 
-          <!-- Barra indicadora esquerda (visível quando expandido, aparece no hover) -->
+          <!-- Barra indicadora esquerda (sempre visível na seção ativa, ou no hover) -->
           <span
             v-show="!isCollapsed"
-            class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 bg-primary rounded-r-full opacity-0 group-hover:opacity-100 transition-opacity duration-150"
+            :class="[
+              'absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 bg-primary rounded-r-full transition-opacity duration-150',
+              activeHref === item.href ? 'opacity-100' : 'opacity-0 group-hover:opacity-100',
+            ]"
           />
 
           <!-- Tooltip (visível somente quando collapsed) -->
@@ -163,9 +173,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 import {
-  BookOpen, Bug, SlidersHorizontal, Store, Wrench, Network,
+  BookOpen, Bug, SlidersHorizontal, Store, Wrench, Network, CreditCard,
   Bookmark, FolderOpen, FileCode, BookUser,
   Moon, Sun,
 } from '@lucide/vue'
@@ -195,6 +205,7 @@ const navItems = [
   { href: '#retornos',    label: 'Códigos / Erros',       icon: Bug              },
   { href: '#parametros',  label: 'Parâmetros',            icon: SlidersHorizontal },
   { href: '#mccs',        label: 'Códigos MCC',           icon: Store            },
+  { href: '#bins',        label: 'BINs / Prefixos',       icon: CreditCard       },
   { href: '#ferramentas', label: 'Diário',                icon: Wrench           },
   { href: '#ambientes',   label: 'Ambientes',             icon: Network          },
   { href: '#manuais',     label: 'Manuais',               icon: Bookmark         },
@@ -203,7 +214,41 @@ const navItems = [
   { href: '#contatos',    label: 'Contatos',              icon: BookUser         },
 ]
 
-onMounted(init)
+// ── Scrollspy: destaca no menu a seção visível no momento ────────────
+const activeHref = ref(navItems[0].href)
+let observer = null
+
+onMounted(() => {
+  init()
+
+  nextTick(() => {
+    const mainEl = document.querySelector('main')
+    const sections = navItems
+      .map(item => document.querySelector(item.href))
+      .filter(Boolean)
+    if (!mainEl || sections.length === 0) return
+
+    const visibleIds = new Set()
+
+    observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) visibleIds.add(entry.target.id)
+          else visibleIds.delete(entry.target.id)
+        })
+
+        // Entre as seções visíveis, prioriza a primeira na ordem da página/menu
+        const current = navItems.find(item => visibleIds.has(item.href.slice(1)))
+        if (current) activeHref.value = current.href
+      },
+      { root: mainEl, rootMargin: '0px 0px -70% 0px', threshold: 0 }
+    )
+
+    sections.forEach(section => observer.observe(section))
+  })
+})
+
+onUnmounted(() => observer?.disconnect())
 </script>
 
 <style scoped>

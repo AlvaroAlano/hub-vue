@@ -11,21 +11,21 @@
       </div>
 
       <!-- ── Barra de busca ────────────────────────────────────── -->
-      <div class="relative flex-1 max-w-2xl">
+      <div class="relative flex-1 max-w-2xl group">
         <Search
-          :size="16"
-          class="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none"
+          :size="17"
+          class="absolute left-3.5 top-1/2 -translate-y-1/2 text-brand-500 dark:text-brand-400 pointer-events-none transition-transform group-focus-within:scale-110"
         />
         <input
           ref="searchInputEl"
           v-model="query"
           @input="search"
           type="text"
-          placeholder="Buscar Postman, FileZilla, Ambientes... (CTRL+K)"
-          class="w-full h-9 bg-background/60 border border-border rounded-lg pl-9 pr-9 text-sm
-                 shadow-sm placeholder:text-muted-foreground
-                 focus:outline-none focus:ring-2 focus:ring-ring
-                 hover:bg-background transition-colors"
+          placeholder="Buscar Postman, FileZilla, Ambientes..."
+          class="w-full h-10 bg-brand-50/60 dark:bg-brand-900/10 border-2 border-brand-200 dark:border-brand-800/70 rounded-xl pl-10 pr-14 text-sm font-medium
+                 shadow-sm shadow-brand-500/5 placeholder:text-muted-foreground placeholder:font-normal
+                 focus:outline-none focus:ring-4 focus:ring-brand-500/15 focus:border-brand-500 dark:focus:border-brand-400
+                 hover:border-brand-300 dark:hover:border-brand-700 hover:shadow-md hover:shadow-brand-500/10 transition-all"
         />
         <button
           v-if="query"
@@ -35,6 +35,14 @@
         >
           <X :size="14" />
         </button>
+        <kbd
+          v-else
+          class="absolute right-2.5 top-1/2 -translate-y-1/2 hidden sm:flex items-center gap-0.5 px-1.5 py-0.5 rounded-md
+                 bg-brand-100/80 dark:bg-brand-800/50 border border-brand-200 dark:border-brand-700
+                 text-[10px] font-bold text-brand-600 dark:text-brand-300 pointer-events-none select-none"
+        >
+          Ctrl K
+        </kbd>
       </div>
 
       <!-- ── Ações ─────────────────────────────────────────────── -->

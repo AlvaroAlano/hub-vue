@@ -24,6 +24,7 @@
       <CodigosRetorno />
       <Parametros />
       <MCCs />
+      <Bins />
       <Ferramentas />
       <Ambientes />
       <Manuais />
@@ -44,6 +45,7 @@ import BaseConhecimento  from './components/sections/BaseConhecimento.vue'
 import CodigosRetorno    from './components/sections/CodigosRetorno.vue'
 import Parametros        from './components/sections/Parametros.vue'
 import MCCs              from './components/sections/MCCs.vue'
+import Bins              from './components/sections/Bins.vue'
 import Ferramentas       from './components/sections/Ferramentas.vue'
 import Ambientes         from './components/sections/Ambientes.vue'
 import Manuais           from './components/sections/Manuais.vue'
