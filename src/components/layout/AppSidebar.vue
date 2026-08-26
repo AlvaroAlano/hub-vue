@@ -215,40 +215,54 @@ const navItems = [
 ]
 
 // ── Scrollspy: destaca no menu a seção visível no momento ────────────
+// Usa uma "linha" fixa perto do topo do <main> e escolhe a última seção
+// (na ordem da página) cujo topo já cruzou essa linha. Mais robusto que
+// checar interseção por faixa: com seções curtas, várias podiam "caber"
+// na mesma faixa ao mesmo tempo e o destaque ficava preso na de cima.
 const activeHref = ref(navItems[0].href)
-let observer = null
+const LINE_OFFSET = 96 // px a partir do topo do <main>
+let mainEl = null
+let sectionEls = []
+let ticking = false
+
+const updateActiveSection = () => {
+  ticking = false
+  if (!mainEl) return
+  const line = mainEl.getBoundingClientRect().top + LINE_OFFSET
+
+  let current = navItems[0]
+  for (let i = 0; i < sectionEls.length; i++) {
+    const el = sectionEls[i]
+    if (!el) continue
+    if (el.getBoundingClientRect().top <= line) {
+      current = navItems[i]
+    } else {
+      break
+    }
+  }
+  activeHref.value = current.href
+}
+
+const onScroll = () => {
+  if (ticking) return
+  ticking = true
+  requestAnimationFrame(updateActiveSection)
+}
 
 onMounted(() => {
   init()
 
   nextTick(() => {
-    const mainEl = document.querySelector('main')
-    const sections = navItems
-      .map(item => document.querySelector(item.href))
-      .filter(Boolean)
-    if (!mainEl || sections.length === 0) return
+    mainEl = document.querySelector('main')
+    sectionEls = navItems.map(item => document.querySelector(item.href))
+    if (!mainEl) return
 
-    const visibleIds = new Set()
-
-    observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) visibleIds.add(entry.target.id)
-          else visibleIds.delete(entry.target.id)
-        })
-
-        // Entre as seções visíveis, prioriza a primeira na ordem da página/menu
-        const current = navItems.find(item => visibleIds.has(item.href.slice(1)))
-        if (current) activeHref.value = current.href
-      },
-      { root: mainEl, rootMargin: '0px 0px -70% 0px', threshold: 0 }
-    )
-
-    sections.forEach(section => observer.observe(section))
+    mainEl.addEventListener('scroll', onScroll, { passive: true })
+    updateActiveSection()
   })
 })
 
-onUnmounted(() => observer?.disconnect())
+onUnmounted(() => mainEl?.removeEventListener('scroll', onScroll))
 </script>
 
 <style scoped>
