@@ -1,5 +1,8 @@
 <template>
-  <section id="documentos">
+  <section
+    id="documentos"
+    data-search-keywords="documento documentos central manual layout conciliacao api documentacao pdf"
+  >
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
       <h2 class="text-lg font-bold text-foreground flex items-center gap-2">
         <FolderOpen class="w-5 h-5 text-blue-500" /> Central de Documentos

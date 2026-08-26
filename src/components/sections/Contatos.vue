@@ -1,5 +1,8 @@
 <template>
-  <section id="contatos">
+  <section
+    id="contatos"
+    data-search-keywords="contato contatos telefone email ramal parceiro cliente associacao prestador fornecedor"
+  >
     <h2 class="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
       <BookUser class="w-5 h-5 text-brand-600" /> Diretório de Contatos
     </h2>

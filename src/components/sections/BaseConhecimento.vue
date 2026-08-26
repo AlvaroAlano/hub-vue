@@ -1,5 +1,8 @@
 <template>
-  <section id="knowledge">
+  <section
+    id="knowledge"
+    data-search-keywords="tutorial tutoriais base conhecimento procedimento passo a passo como fazer configuracao"
+  >
     <div class="flex items-center justify-between mb-4">
       <h2 class="text-lg font-bold text-foreground flex items-center gap-2">
         <BookOpen class="w-5 h-5 text-brand-600" /> Base de Conhecimento

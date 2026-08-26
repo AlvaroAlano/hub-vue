@@ -1,5 +1,8 @@
 <template>
-  <section id="softwares">
+  <section
+    id="softwares"
+    data-search-keywords="software softwares programa download instalacao ferramenta app"
+  >
     <h2 class="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
       <Laptop class="w-5 h-5 text-brand-600" /> Softwares
     </h2>

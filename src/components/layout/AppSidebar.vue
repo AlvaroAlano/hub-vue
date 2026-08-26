@@ -215,39 +215,53 @@ const navItems = [
 ]
 
 // ── Scrollspy: destaca no menu a seção visível no momento ────────────
-// Usa uma "linha" fixa perto do topo do <main> e escolhe a última seção
-// (na ordem da página) cujo topo já cruzou essa linha. Mais robusto que
-// checar interseção por faixa: com seções curtas, várias podiam "caber"
-// na mesma faixa ao mesmo tempo e o destaque ficava preso na de cima.
+// Regra: a seção ativa é a primeira (na ordem da página) que ainda ocupa
+// o topo da área de leitura — ou seja, cuja borda inferior está abaixo de
+// uma linha de referência logo abaixo do topo do <main>.
+//
+// Comparar o TOPO da seção com essa linha (tentativa anterior) não funciona:
+// ao clicar num item do menu o navegador ancora a seção ~110px abaixo do
+// topo do <main>, logo ABAIXO da linha — então ela não era considerada e o
+// destaque caía na seção anterior. Comparar a borda INFERIOR não depende de
+// onde exatamente a âncora para, e funciona igual para seções curtas e longas.
 const activeHref = ref(navItems[0].href)
-const LINE_OFFSET = 96 // px a partir do topo do <main>
+const LINE_OFFSET = 140 // px abaixo do topo do <main> (> os ~110px da âncora)
 let mainEl = null
 let sectionEls = []
 let ticking = false
 
-// Enquanto o scroll suave de um clique no menu está em andamento, o cálculo
-// por posição fica "instável" (passa por seções intermediárias no caminho)
-// e sobrescrevia o item recém-clicado pelo de cima. Suprime a atualização
-// por scroll durante essa janela e corrige no final, caso a rolagem não
-// tenha alcançado exatamente a linha de referência (ex.: últimas seções).
-let suppressScroll = false
-let suppressTimer = null
+// Ao clicar num item, o destaque fica preso nele enquanto a rolagem suave
+// percorre as seções do caminho — mas só até a âncora chegar ao destino ou
+// até vencer um prazo. Sem esse prazo, continuar rolando logo após o clique
+// congelaria o destaque (qualquer trava baseada em "parou de rolar" nunca
+// dispara enquanto os eventos de scroll continuam chegando).
+let pendingHref = null
+let pendingDeadline = 0
 
 const updateActiveSection = () => {
   ticking = false
-  if (!mainEl || suppressScroll) return
+  if (!mainEl) return
   const line = mainEl.getBoundingClientRect().top + LINE_OFFSET
 
-  let current = navItems[0]
+  let current = navItems[navItems.length - 1]
   for (let i = 0; i < sectionEls.length; i++) {
     const el = sectionEls[i]
     if (!el) continue
-    if (el.getBoundingClientRect().top <= line) {
+    if (el.getBoundingClientRect().bottom > line) {
       current = navItems[i]
-    } else {
       break
     }
   }
+
+  if (pendingHref) {
+    if (current.href === pendingHref || performance.now() > pendingDeadline) {
+      pendingHref = null
+    } else {
+      activeHref.value = pendingHref
+      return
+    }
+  }
+
   activeHref.value = current.href
 }
 
@@ -259,12 +273,8 @@ const onScroll = () => {
 
 const onNavClick = (item) => {
   activeHref.value = item.href
-  suppressScroll = true
-  clearTimeout(suppressTimer)
-  suppressTimer = setTimeout(() => {
-    suppressScroll = false
-    updateActiveSection()
-  }, 700)
+  pendingHref = item.href
+  pendingDeadline = performance.now() + 1200
 }
 
 onMounted(() => {

@@ -1,5 +1,8 @@
 <template>
-  <section id="retornos">
+  <section
+    id="retornos"
+    data-search-keywords="codigo codigos retorno retornos erro erros mensagem visor recusa negada transacao"
+  >
     <h2 class="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
       <BugOff class="w-5 h-5 text-red-500" /> Códigos de Retorno
     </h2>

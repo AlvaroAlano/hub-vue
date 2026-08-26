@@ -1,5 +1,8 @@
 <template>
-  <section id="manuais">
+  <section
+    id="manuais"
+    data-search-keywords="manual manuais sistema tutorial guia procedimento app portal rh"
+  >
     <!-- Cabeçalho com Título e Busca -->
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
       <h2 class="text-lg font-bold text-foreground flex items-center gap-2">

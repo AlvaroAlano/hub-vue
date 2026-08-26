@@ -1,5 +1,8 @@
 <template>
-  <section id="ambientes">
+  <section
+    id="ambientes"
+    data-search-keywords="ambiente ambientes url link acesso producao homologacao api documentacao integracao"
+  >
     <h2 class="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
       <Network class="w-5 h-5 text-brand-600" /> Ambientes Convcard
     </h2>

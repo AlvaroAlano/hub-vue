@@ -1,5 +1,9 @@
 <template>
-  <section id="mccs" class="flex flex-col h-full">
+  <section
+    id="mccs"
+    class="flex flex-col h-full"
+    data-search-keywords="mcc mccs merchant category code ramo atividade taxa remuneracao credenciada"
+  >
     <div class="flex items-center justify-between mb-5">
       <h2 class="text-xl md:text-2xl font-bold text-foreground flex items-center gap-3">
         <Store class="w-5 h-5 text-emerald-600" /> Códigos MCC

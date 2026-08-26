@@ -1,5 +1,9 @@
 <template>
-  <section id="parametros" class="flex flex-col h-full">
+  <section
+    id="parametros"
+    class="flex flex-col h-full"
+    data-search-keywords="parametro parametros flag flg configuracao sistema habilita"
+  >
     <div class="flex items-center justify-between mb-5">
       <h2 class="text-xl md:text-2xl font-bold text-foreground flex items-center gap-3">
         <SlidersHorizontal class="w-5 h-5 text-pink-600" /> Parâmetros do Sistema

@@ -1,5 +1,8 @@
 <template>
-  <section id="ferramentas">
+  <section
+    id="ferramentas"
+    data-search-keywords="ferramenta ferramentas diario dia a dia movidesk webmail monitoramento chamado"
+  >
     <h2 class="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
       <Wrench class="w-5 h-5 text-purple-600" /> Ferramentas Diárias
     </h2>
