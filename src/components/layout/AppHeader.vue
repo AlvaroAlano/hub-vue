@@ -37,11 +37,12 @@
         </button>
         <kbd
           v-else
-          class="absolute right-2.5 top-1/2 -translate-y-1/2 hidden sm:flex items-center gap-0.5 px-1.5 py-0.5 rounded-md
+          title="Atalho: /"
+          class="absolute right-2.5 top-1/2 -translate-y-1/2 hidden sm:flex items-center justify-center min-w-[20px] px-1.5 py-0.5 rounded-md
                  bg-brand-100/80 dark:bg-brand-800/50 border border-brand-200 dark:border-brand-700
-                 text-[10px] font-bold text-brand-600 dark:text-brand-300 pointer-events-none select-none"
+                 text-xs font-bold text-brand-600 dark:text-brand-300 pointer-events-none select-none"
         >
-          Ctrl K
+          /
         </kbd>
       </div>
 
@@ -155,13 +156,23 @@ const reloadPage = async () => {
   }
 }
 
-// ── Atalho CTRL+K ────────────────────────────────────────────────────
+// ── Atalho de busca ──────────────────────────────────────────────────
+// Ctrl/Cmd+K é reservado pelo Chrome/Edge para focar a barra de endereço
+// (modo de busca) e não pode ser sobrescrito por JS — preventDefault()
+// não tem efeito sobre esse atalho do navegador. "/" é o padrão usado
+// por GitHub, Slack e Gmail e não sofre esse conflito.
 const onKeydown = (e) => {
-  if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-    e.preventDefault()
-    searchInputEl.value?.focus()
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
+  const isCtrlK = (e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k'
+  const isSlash = e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey
+  if (!isCtrlK && !isSlash) return
+
+  const target = e.target
+  const isTyping = target?.tagName === 'INPUT' || target?.tagName === 'TEXTAREA' || target?.isContentEditable
+  if (isSlash && isTyping) return // deixa "/" ser digitado normalmente em outros campos
+
+  e.preventDefault()
+  searchInputEl.value?.focus()
+  document.querySelector('main')?.scrollTo({ top: 0, behavior: 'smooth' })
 }
 onMounted(()  => document.addEventListener('keydown', onKeydown))
 onUnmounted(() => document.removeEventListener('keydown', onKeydown))

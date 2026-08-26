@@ -31,7 +31,7 @@
           v-for="item in navItems"
           :key="item.href"
           :href="item.href"
-          @click="activeHref = item.href"
+          @click="onNavClick(item)"
           :aria-current="activeHref === item.href ? 'true' : undefined"
           :class="[
             'relative flex items-center gap-3 px-3 py-2 rounded-lg',
@@ -225,9 +225,17 @@ let mainEl = null
 let sectionEls = []
 let ticking = false
 
+// Enquanto o scroll suave de um clique no menu está em andamento, o cálculo
+// por posição fica "instável" (passa por seções intermediárias no caminho)
+// e sobrescrevia o item recém-clicado pelo de cima. Suprime a atualização
+// por scroll durante essa janela e corrige no final, caso a rolagem não
+// tenha alcançado exatamente a linha de referência (ex.: últimas seções).
+let suppressScroll = false
+let suppressTimer = null
+
 const updateActiveSection = () => {
   ticking = false
-  if (!mainEl) return
+  if (!mainEl || suppressScroll) return
   const line = mainEl.getBoundingClientRect().top + LINE_OFFSET
 
   let current = navItems[0]
@@ -247,6 +255,16 @@ const onScroll = () => {
   if (ticking) return
   ticking = true
   requestAnimationFrame(updateActiveSection)
+}
+
+const onNavClick = (item) => {
+  activeHref.value = item.href
+  suppressScroll = true
+  clearTimeout(suppressTimer)
+  suppressTimer = setTimeout(() => {
+    suppressScroll = false
+    updateActiveSection()
+  }, 700)
 }
 
 onMounted(() => {
