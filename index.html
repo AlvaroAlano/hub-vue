@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/x-icon" href="/hub-vue/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>ConvCard Hub | Suporte</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" crossorigin href="/hub-vue/assets/index-Bpwn9JUN.css">
+  <link rel="manifest" href="/hub-vue/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/hub-vue/registerSW.js"></script>
+<style id="hub-lock-style">
+  #hub-lock:not([hidden]) { position: fixed; inset: 0; z-index: 2147483647; display: flex; align-items: center; justify-content: center; padding: 24px; background: #f0f4fa; font-family: Inter, system-ui, sans-serif; }
+  .hub-lock-card { width: 100%; max-width: 360px; background: #fff; border: 1px solid #dce8f5; border-radius: 16px; padding: 32px; box-shadow: 0 20px 45px -20px rgba(0, 42, 83, .35); display: flex; flex-direction: column; gap: 10px; }
+  .hub-lock-logo { height: 40px; align-self: center; margin-bottom: 8px; }
+  .hub-lock-card h1 { margin: 0; font-size: 18px; font-weight: 700; color: #002A53; text-align: center; }
+  .hub-lock-card p { margin: 0 0 8px; font-size: 13px; color: #5b6b80; text-align: center; }
+  .hub-lock-card label { font-size: 12px; font-weight: 600; color: #1d4280; }
+  .hub-lock-card input[type=text], .hub-lock-card input[type=password] { width: 100%; box-sizing: border-box; height: 40px; padding: 0 12px; border: 2px solid #b8d1ec; border-radius: 10px; font-size: 14px; color: #002A53; background: #fff; outline: none; }
+  .hub-lock-card input:focus { border-color: #336BC0; box-shadow: 0 0 0 4px rgba(51, 107, 192, .15); }
+  .hub-lock-check { display: flex; align-items: center; gap: 8px; font-weight: 500 !important; color: #5b6b80 !important; margin-top: 4px; cursor: pointer; }
+  #hub-lock-erro { margin: 0; padding: 8px 10px; border-radius: 8px; background: #fef2f2; color: #b91c1c; font-size: 13px; text-align: center; }
+  #hub-lock-erro[hidden] { display: none; }
+  .hub-lock-card button { margin-top: 8px; height: 42px; border: 0; border-radius: 10px; background: #336BC0; color: #fff; font-size: 14px; font-weight: 700; cursor: pointer; }
+  .hub-lock-card button:hover { background: #2857a0; }
+  .hub-lock-card button:disabled { opacity: .7; cursor: progress; }
+  @media (prefers-color-scheme: dark) {
+    #hub-lock:not([hidden]) { background: #001832; }
+    .hub-lock-card { background: #0b1a2e; border-color: #102d60; }
+    .hub-lock-card h1 { color: #dce8f5; }
+    .hub-lock-card p, .hub-lock-check { color: #7eacd9 !important; }
+    .hub-lock-card label { color: #b8d1ec; }
+    .hub-lock-card input[type=text], .hub-lock-card input[type=password] { background: #001832; color: #dce8f5; border-color: #102d60; }
+  }
+</style>
+</head>
+  <body>
+    <div id="app"></div>
+  
+<div id="hub-lock" hidden>
+  <form class="hub-lock-card">
+    <picture class="hub-lock-logo">
+      <source media="(prefers-color-scheme: dark)" srcset="/hub-vue/Convcard%20-%20Logo_branca.png">
+      <img src="/hub-vue/Convcard%20-%20Logo_azul.png" alt="Convcard" style="height: 40px; display: block; margin: 0 auto;">
+    </picture>
+    <h1>Hub do Suporte</h1>
+    <p>Acesso restrito. Entre com o login e a senha da equipe.</p>
+    <label for="hub-lock-login">Login</label>
+    <input id="hub-lock-login" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+    <label for="hub-lock-senha">Senha</label>
+    <input id="hub-lock-senha" type="password" autocomplete="current-password" required>
+    <label class="hub-lock-check"><input id="hub-lock-lembrar" type="checkbox" checked> Lembrar neste dispositivo</label>
+    <p id="hub-lock-erro" role="alert" hidden></p>
+    <button type="submit">Entrar</button>
+  </form>
+</div>
+
+<script>
+(() => {
+  const LOCK = {"v":1,"iterations":600000,"salt":"Y29udmNhcmQtaHViL2xvY2svdjE=","check":"convcard-hub-ok","verifier":"3nGoij4xD3DAP2+ykB0oQJJjneNss6jD1op8tBnE+riKlpADZ8mWN4e11Q==","entry":"assets/index-01vRd5oW.js.enc"};
+  const BASE = "/hub-vue/";
+  const STORAGE = 'hub_lock_key';
+  const el = document.getElementById('hub-lock');
+  const form = el.querySelector('form');
+  const login = el.querySelector('#hub-lock-login');
+  const senha = el.querySelector('#hub-lock-senha');
+  const lembrar = el.querySelector('#hub-lock-lembrar');
+  const erro = el.querySelector('#hub-lock-erro');
+  const botao = el.querySelector('button[type=submit]');
+  const fromB64 = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+  const toB64 = (buf) => btoa(String.fromCharCode(...new Uint8Array(buf)));
+  const decrypt = (key, bytes) => crypto.subtle.decrypt({ name: 'AES-GCM', iv: bytes.slice(0, 12) }, key, bytes.slice(12));
+
+  const showError = (msg) => { erro.textContent = msg; erro.hidden = false; };
+  const showLock = () => { el.hidden = false; (login.value ? senha : login).focus(); };
+
+  if (!window.crypto || !crypto.subtle) {
+    showLock();
+    showError('Este navegador não suporta o acesso seguro. Abra o hub pelo endereço https.');
+    botao.disabled = true;
+    return;
+  }
+
+  async function deriveKey(user, pass) {
+    const material = new TextEncoder().encode(user.trim().toLowerCase() + '\n' + pass);
+    const base = await crypto.subtle.importKey('raw', material, 'PBKDF2', false, ['deriveKey']);
+    return crypto.subtle.deriveKey(
+      { name: 'PBKDF2', hash: 'SHA-256', salt: fromB64(LOCK.salt), iterations: LOCK.iterations },
+      base, { name: 'AES-GCM', length: 256 }, true, ['decrypt']
+    );
+  }
+
+  async function isValid(key) {
+    try { return new TextDecoder().decode(await decrypt(key, fromB64(LOCK.verifier))) === LOCK.check; }
+    catch { return false; }
+  }
+
+  async function openHub(key) {
+    window.__hubKey = key;
+    const res = await fetch(BASE + LOCK.entry);
+    if (!res.ok) throw new Error('Não foi possível carregar o hub (erro ' + res.status + ').');
+    const code = await decrypt(key, new Uint8Array(await res.arrayBuffer()));
+    const url = URL.createObjectURL(new Blob([code], { type: 'text/javascript' }));
+    await import(url);
+    el.remove();
+  }
+
+  async function rememberedKey() {
+    const raw = localStorage.getItem(STORAGE) || sessionStorage.getItem(STORAGE);
+    if (!raw) return null;
+    try {
+      const key = await crypto.subtle.importKey('raw', fromB64(raw), 'AES-GCM', true, ['decrypt']);
+      if (await isValid(key)) return key;
+    } catch {}
+    localStorage.removeItem(STORAGE);
+    sessionStorage.removeItem(STORAGE);
+    return null;
+  }
+
+  // Permite sair (ex.: computador compartilhado): window.__hubLogout()
+  window.__hubLogout = () => {
+    localStorage.removeItem(STORAGE);
+    sessionStorage.removeItem(STORAGE);
+    location.reload();
+  };
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    erro.hidden = true;
+    botao.disabled = true;
+    botao.textContent = 'Verificando...';
+    try {
+      const key = await deriveKey(login.value, senha.value);
+      if (!(await isValid(key))) {
+        showError('Login ou senha incorretos.');
+        senha.select();
+        return;
+      }
+      const raw = toB64(await crypto.subtle.exportKey('raw', key));
+      (lembrar.checked ? localStorage : sessionStorage).setItem(STORAGE, raw);
+      senha.value = '';
+      await openHub(key);
+    } catch (err) {
+      showError(err && err.message ? err.message : 'Erro ao abrir o hub.');
+    } finally {
+      botao.disabled = false;
+      botao.textContent = 'Entrar';
+    }
+  });
+
+  rememberedKey()
+    .then((key) => (key ? openHub(key) : showLock()))
+    .catch((err) => { showLock(); showError(err && err.message ? err.message : 'Erro ao abrir o hub.'); });
+})();
+</script>
+</body>
+</html>
